@@ -28,7 +28,7 @@ class SelectPhotoViewModel: SelectPhotoViewModelProtocol {
             .toArray()
             .asObservable()
             .subscribe(onNext: { [weak self] image in
-                print(image)
+//                print(image)
                 self?.imageListSubject.onNext(image)
                 }, onError: { error in
                     print("on error ")

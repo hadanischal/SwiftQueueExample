@@ -14,12 +14,13 @@ import Alamofire
 
 class BaseApiHandler: BaseApiHandlerProtocol {
     private let webService: WebServiceProtocol
-    
+
     init(withWebService webService: WebServiceProtocol = WebService()) {
         self.webService = webService
     }
-    
-    func request(url: URL, parameters: [String: Any]?) -> Completable {
-      return self.webService.request(url: url, parameters: parameters)
+
+    func request(withParameters parameters: [String: Any]?) -> Completable {
+        let url = "https://jsonplaceholder.typicode.com/posts"
+        return self.webService.request(url: URL(string: url)!, parameters: parameters)
     }
 }

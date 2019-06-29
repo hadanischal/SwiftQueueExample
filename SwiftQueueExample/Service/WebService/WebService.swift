@@ -20,6 +20,7 @@ class WebService: WebServiceProtocol {
             Alamofire.request(url, method: .post, parameters: parameters)
                 .validate()
                 .responseJSON { response in
+                    print("response:", response)
                     switch response.result {
                     case .success(let value):
                         print(value)

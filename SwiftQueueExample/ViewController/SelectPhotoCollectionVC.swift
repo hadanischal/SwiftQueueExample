@@ -76,7 +76,7 @@ class SelectPhotoCollectionVC: UICollectionViewController {
         viewModel.getDisplayImage(withModel: self.imageList[indexPath.row])
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { model in
-                print("model:", model)
+//                print("model:", model)
                 DispatchQueue.main.async {
                     cell.photoImageView.image = model.image
                 }

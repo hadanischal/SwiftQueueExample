@@ -14,7 +14,7 @@ class BaseViewController: UIViewController {
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var uploadButton: UIButton!
     let disposeBag = DisposeBag()
-    private var imageSelected:SelectPhotoModel!
+    private var imageSelected: SelectPhotoModel!
     var viewModel: BaseViewModelProtocol!
 
     override func viewDidLoad() {
@@ -22,7 +22,7 @@ class BaseViewController: UIViewController {
         viewModel = BaseViewModel()
         uploadButton.isEnabled = false
         uploadButton.alpha = 0.4
-        
+
         uploadButton.rx.tap
             .bind { [weak self] _ in
                 self?.viewModel.uploadImage(withModel: self?.imageSelected)

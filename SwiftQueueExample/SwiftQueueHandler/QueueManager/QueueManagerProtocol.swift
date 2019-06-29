@@ -1,5 +1,5 @@
 //
-//  BaseApiHandlerProtocol.swift
+//  QueueManagerProtocol.swift
 //  SwiftQueueExample
 //
 //  Created by Nischal Hada on 6/29/19.
@@ -8,6 +8,6 @@
 
 import RxSwift
 
-protocol BaseApiHandlerProtocol {
-    func request(withParameters parameters: [String: Any]?) -> Completable
+protocol QueueManagerProtocol {
+    func add(job: JobProtocol) -> Completable
 }

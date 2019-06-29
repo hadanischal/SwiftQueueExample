@@ -21,6 +21,14 @@
 		AF373C1322C774B1000A5AD7 /* BaseApiHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF373C1222C774B1000A5AD7 /* BaseApiHandlerProtocol.swift */; };
 		AF373C1822C77DC4000A5AD7 /* WebServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF373C1722C77DC4000A5AD7 /* WebServiceProtocol.swift */; };
 		AF373C1A22C77DD9000A5AD7 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF373C1922C77DD9000A5AD7 /* WebService.swift */; };
+		AF373C2D22C7A005000A5AD7 /* QueueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF373C2322C7A005000A5AD7 /* QueueManager.swift */; };
+		AF373C2E22C7A005000A5AD7 /* QueueManagerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF373C2422C7A005000A5AD7 /* QueueManagerBuilder.swift */; };
+		AF373C2F22C7A005000A5AD7 /* QueueManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF373C2522C7A005000A5AD7 /* QueueManagerProtocol.swift */; };
+		AF373C3022C7A005000A5AD7 /* QueueJobCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF373C2722C7A005000A5AD7 /* QueueJobCreator.swift */; };
+		AF373C3122C7A005000A5AD7 /* JobHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF373C2822C7A005000A5AD7 /* JobHandler.swift */; };
+		AF373C3222C7A005000A5AD7 /* JobModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF373C2A22C7A005000A5AD7 /* JobModel.swift */; };
+		AF373C3322C7A005000A5AD7 /* JobType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF373C2B22C7A005000A5AD7 /* JobType.swift */; };
+		AF373C3422C7A005000A5AD7 /* JobProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF373C2C22C7A005000A5AD7 /* JobProtocol.swift */; };
 		AFE25EA822C6F1210064BE6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE25EA722C6F1210064BE6E /* AppDelegate.swift */; };
 		AFE25EAD22C6F1210064BE6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFE25EAB22C6F1210064BE6E /* Main.storyboard */; };
 		AFE25EB022C6F1210064BE6E /* SwiftQueueExample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFE25EAE22C6F1210064BE6E /* SwiftQueueExample.xcdatamodeld */; };
@@ -72,6 +80,14 @@
 		AF373C1222C774B1000A5AD7 /* BaseApiHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApiHandlerProtocol.swift; sourceTree = "<group>"; };
 		AF373C1722C77DC4000A5AD7 /* WebServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceProtocol.swift; sourceTree = "<group>"; };
 		AF373C1922C77DD9000A5AD7 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		AF373C2322C7A005000A5AD7 /* QueueManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueManager.swift; sourceTree = "<group>"; };
+		AF373C2422C7A005000A5AD7 /* QueueManagerBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueManagerBuilder.swift; sourceTree = "<group>"; };
+		AF373C2522C7A005000A5AD7 /* QueueManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueManagerProtocol.swift; sourceTree = "<group>"; };
+		AF373C2722C7A005000A5AD7 /* QueueJobCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueJobCreator.swift; sourceTree = "<group>"; };
+		AF373C2822C7A005000A5AD7 /* JobHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobHandler.swift; sourceTree = "<group>"; };
+		AF373C2A22C7A005000A5AD7 /* JobModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobModel.swift; sourceTree = "<group>"; };
+		AF373C2B22C7A005000A5AD7 /* JobType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobType.swift; sourceTree = "<group>"; };
+		AF373C2C22C7A005000A5AD7 /* JobProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobProtocol.swift; sourceTree = "<group>"; };
 		AFE25EA422C6F1210064BE6E /* SwiftQueueExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftQueueExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFE25EA722C6F1210064BE6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFE25EAC22C6F1210064BE6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -199,6 +215,45 @@
 			path = WebService;
 			sourceTree = "<group>";
 		};
+		AF373C2122C7A005000A5AD7 /* SwiftQueueHandler */ = {
+			isa = PBXGroup;
+			children = (
+				AF373C2222C7A005000A5AD7 /* QueueManager */,
+				AF373C2622C7A005000A5AD7 /* JobScheduler */,
+				AF373C2922C7A005000A5AD7 /* NewsJobHandler */,
+			);
+			path = SwiftQueueHandler;
+			sourceTree = "<group>";
+		};
+		AF373C2222C7A005000A5AD7 /* QueueManager */ = {
+			isa = PBXGroup;
+			children = (
+				AF373C2322C7A005000A5AD7 /* QueueManager.swift */,
+				AF373C2422C7A005000A5AD7 /* QueueManagerBuilder.swift */,
+				AF373C2522C7A005000A5AD7 /* QueueManagerProtocol.swift */,
+			);
+			path = QueueManager;
+			sourceTree = "<group>";
+		};
+		AF373C2622C7A005000A5AD7 /* JobScheduler */ = {
+			isa = PBXGroup;
+			children = (
+				AF373C2722C7A005000A5AD7 /* QueueJobCreator.swift */,
+				AF373C2822C7A005000A5AD7 /* JobHandler.swift */,
+			);
+			path = JobScheduler;
+			sourceTree = "<group>";
+		};
+		AF373C2922C7A005000A5AD7 /* NewsJobHandler */ = {
+			isa = PBXGroup;
+			children = (
+				AF373C2A22C7A005000A5AD7 /* JobModel.swift */,
+				AF373C2B22C7A005000A5AD7 /* JobType.swift */,
+				AF373C2C22C7A005000A5AD7 /* JobProtocol.swift */,
+			);
+			path = NewsJobHandler;
+			sourceTree = "<group>";
+		};
 		AFE25E9B22C6F1210064BE6E = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +280,7 @@
 		AFE25EA622C6F1210064BE6E /* SwiftQueueExample */ = {
 			isa = PBXGroup;
 			children = (
+				AF373C2122C7A005000A5AD7 /* SwiftQueueHandler */,
 				AF373C1622C77DAB000A5AD7 /* Service */,
 				AF373C0522C71B1D000A5AD7 /* ImageManager */,
 				AF373BFB22C716B2000A5AD7 /* Models */,
@@ -523,7 +579,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF373C2F22C7A005000A5AD7 /* QueueManagerProtocol.swift in Sources */,
 				AFE25EE922C70F6C0064BE6E /* PhotoCollectionCell.swift in Sources */,
+				AF373C3022C7A005000A5AD7 /* QueueJobCreator.swift in Sources */,
+				AF373C3222C7A005000A5AD7 /* JobModel.swift in Sources */,
 				AF373C0722C71B2C000A5AD7 /* ImageManager.swift in Sources */,
 				AF373C1122C77479000A5AD7 /* BaseApiHandler.swift in Sources */,
 				AF373C0D22C71F75000A5AD7 /* SelectPhotoModel.swift in Sources */,
@@ -536,9 +595,14 @@
 				AFE25EA822C6F1210064BE6E /* AppDelegate.swift in Sources */,
 				AF373C0B22C71BFA000A5AD7 /* ImageModel.swift in Sources */,
 				AF373C1322C774B1000A5AD7 /* BaseApiHandlerProtocol.swift in Sources */,
+				AF373C3422C7A005000A5AD7 /* JobProtocol.swift in Sources */,
+				AF373C3122C7A005000A5AD7 /* JobHandler.swift in Sources */,
 				AF373C0922C71B49000A5AD7 /* ImageManagerProtocol.swift in Sources */,
 				AFE25EB022C6F1210064BE6E /* SwiftQueueExample.xcdatamodeld in Sources */,
+				AF373C2E22C7A005000A5AD7 /* QueueManagerBuilder.swift in Sources */,
 				AF373C0022C71963000A5AD7 /* BaseViewModelProtocol.swift in Sources */,
+				AF373C2D22C7A005000A5AD7 /* QueueManager.swift in Sources */,
+				AF373C3322C7A005000A5AD7 /* JobType.swift in Sources */,
 				AF373BFE22C71953000A5AD7 /* BaseViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
