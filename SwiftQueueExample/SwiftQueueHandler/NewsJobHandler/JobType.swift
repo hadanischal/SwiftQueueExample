@@ -1,5 +1,5 @@
 //
-//  BaseViewModelProtocol.swift
+//  JobType.swift
 //  SwiftQueueExample
 //
 //  Created by Nischal Hada on 6/29/19.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol BaseViewModelProtocol {
-    func uploadImage(withModel model: SelectPhotoModel?)
+enum JobType: String {
+    case imageUpload
 }

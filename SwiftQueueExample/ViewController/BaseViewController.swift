@@ -14,11 +14,19 @@ class BaseViewController: UIViewController {
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var uploadButton: UIButton!
     let disposeBag = DisposeBag()
+    private var imageSelected: SelectPhotoModel!
+    var viewModel: BaseViewModelProtocol!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = BaseViewModel()
         uploadButton.isEnabled = false
         uploadButton.alpha = 0.4
+
+        uploadButton.rx.tap
+            .bind { [weak self] _ in
+                self?.viewModel.uploadImage(withModel: self?.imageSelected)
+        }.disposed(by: disposeBag)
      }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -28,6 +36,7 @@ class BaseViewController: UIViewController {
         }
         photosCVC.selectedPhoto.subscribe(onNext: { [weak self] photo in
             DispatchQueue.main.async {
+                self?.imageSelected = photo
                 self?.updateUI(with: photo.image)
             }
 
