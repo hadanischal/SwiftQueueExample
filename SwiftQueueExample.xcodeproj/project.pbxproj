@@ -3,20 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2F2D54CB5AD8EA0A8005AA99 /* Pods_SwiftQueueExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41E4DFEF7373BF4797AEFD26 /* Pods_SwiftQueueExample.framework */; };
 		8191D3F60669FCC84415A877 /* Pods_SwiftQueueExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C3400712F59AAAA0E97881B /* Pods_SwiftQueueExampleTests.framework */; };
 		AFE25EA822C6F1210064BE6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE25EA722C6F1210064BE6E /* AppDelegate.swift */; };
-		AFE25EAA22C6F1210064BE6E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE25EA922C6F1210064BE6E /* ViewController.swift */; };
 		AFE25EAD22C6F1210064BE6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFE25EAB22C6F1210064BE6E /* Main.storyboard */; };
 		AFE25EB022C6F1210064BE6E /* SwiftQueueExample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFE25EAE22C6F1210064BE6E /* SwiftQueueExample.xcdatamodeld */; };
 		AFE25EB222C6F1230064BE6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFE25EB122C6F1230064BE6E /* Assets.xcassets */; };
 		AFE25EB522C6F1230064BE6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFE25EB322C6F1230064BE6E /* LaunchScreen.storyboard */; };
 		AFE25EC022C6F1240064BE6E /* SwiftQueueExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE25EBF22C6F1240064BE6E /* SwiftQueueExampleTests.swift */; };
 		AFE25ECB22C6F1240064BE6E /* SwiftQueueExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE25ECA22C6F1240064BE6E /* SwiftQueueExampleUITests.swift */; };
+		AFE25EE422C70D850064BE6E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE25EE322C70D850064BE6E /* BaseViewController.swift */; };
+		AFE25EE722C70F330064BE6E /* SelectPhotoCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE25EE622C70F330064BE6E /* SelectPhotoCollectionVC.swift */; };
+		AFE25EE922C70F6C0064BE6E /* PhotoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE25EE822C70F6C0064BE6E /* PhotoCollectionCell.swift */; };
 		C837B2957DBE17DC8E9FE2F4 /* Pods_SwiftQueueExampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FC594EAB792A712DE99155 /* Pods_SwiftQueueExampleUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,9 +47,9 @@
 		45FC594EAB792A712DE99155 /* Pods_SwiftQueueExampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftQueueExampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54BA70EC3EBDFD6EDDC8968E /* Pods-SwiftQueueExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftQueueExampleUITests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftQueueExampleUITests/Pods-SwiftQueueExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9C3400712F59AAAA0E97881B /* Pods_SwiftQueueExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftQueueExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF373BF822C715BF000A5AD7 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		AFE25EA422C6F1210064BE6E /* SwiftQueueExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftQueueExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFE25EA722C6F1210064BE6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AFE25EA922C6F1210064BE6E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AFE25EAC22C6F1210064BE6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AFE25EAF22C6F1210064BE6E /* SwiftQueueExample.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwiftQueueExample.xcdatamodel; sourceTree = "<group>"; };
 		AFE25EB122C6F1230064BE6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,6 +61,9 @@
 		AFE25EC622C6F1240064BE6E /* SwiftQueueExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftQueueExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFE25ECA22C6F1240064BE6E /* SwiftQueueExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftQueueExampleUITests.swift; sourceTree = "<group>"; };
 		AFE25ECC22C6F1240064BE6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFE25EE322C70D850064BE6E /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		AFE25EE622C70F330064BE6E /* SelectPhotoCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoCollectionVC.swift; sourceTree = "<group>"; };
+		AFE25EE822C70F6C0064BE6E /* PhotoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionCell.swift; sourceTree = "<group>"; };
 		BB7C1C10951EEE91B46C2597 /* Pods-SwiftQueueExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftQueueExample.debug.xcconfig"; path = "Target Support Files/Pods-SwiftQueueExample/Pods-SwiftQueueExample.debug.xcconfig"; sourceTree = "<group>"; };
 		E667036012E9953BCEF61FD8 /* Pods-SwiftQueueExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftQueueExampleTests.release.xcconfig"; path = "Target Support Files/Pods-SwiftQueueExampleTests/Pods-SwiftQueueExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,7 +106,6 @@
 				54BA70EC3EBDFD6EDDC8968E /* Pods-SwiftQueueExampleUITests.debug.xcconfig */,
 				145A5C34A08C00C7760D7F2A /* Pods-SwiftQueueExampleUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -118,6 +122,7 @@
 		AFE25E9B22C6F1210064BE6E = {
 			isa = PBXGroup;
 			children = (
+				AF373BF822C715BF000A5AD7 /* .swiftlint.yml */,
 				AFE25EA622C6F1210064BE6E /* SwiftQueueExample */,
 				AFE25EBE22C6F1240064BE6E /* SwiftQueueExampleTests */,
 				AFE25EC922C6F1240064BE6E /* SwiftQueueExampleUITests */,
@@ -140,8 +145,10 @@
 		AFE25EA622C6F1210064BE6E /* SwiftQueueExample */ = {
 			isa = PBXGroup;
 			children = (
+				AFE25EE522C70EFE0064BE6E /* Cell */,
+				AFE25EE022C70AE30064BE6E /* ViewController */,
+				AFE25ED922C6F8720064BE6E /* Resources */,
 				AFE25EA722C6F1210064BE6E /* AppDelegate.swift */,
-				AFE25EA922C6F1210064BE6E /* ViewController.swift */,
 				AFE25EAB22C6F1210064BE6E /* Main.storyboard */,
 				AFE25EB122C6F1230064BE6E /* Assets.xcassets */,
 				AFE25EB322C6F1230064BE6E /* LaunchScreen.storyboard */,
@@ -167,6 +174,30 @@
 				AFE25ECC22C6F1240064BE6E /* Info.plist */,
 			);
 			path = SwiftQueueExampleUITests;
+			sourceTree = "<group>";
+		};
+		AFE25ED922C6F8720064BE6E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AFE25EE022C70AE30064BE6E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AFE25EE322C70D850064BE6E /* BaseViewController.swift */,
+				AFE25EE622C70F330064BE6E /* SelectPhotoCollectionVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		AFE25EE522C70EFE0064BE6E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				AFE25EE822C70F6C0064BE6E /* PhotoCollectionCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -408,7 +439,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFE25EAA22C6F1210064BE6E /* ViewController.swift in Sources */,
+				AFE25EE922C70F6C0064BE6E /* PhotoCollectionCell.swift in Sources */,
+				AFE25EE422C70D850064BE6E /* BaseViewController.swift in Sources */,
+				AFE25EE722C70F330064BE6E /* SelectPhotoCollectionVC.swift in Sources */,
 				AFE25EA822C6F1210064BE6E /* AppDelegate.swift in Sources */,
 				AFE25EB022C6F1210064BE6E /* SwiftQueueExample.xcdatamodeld in Sources */,
 			);
