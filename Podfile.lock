@@ -1,0 +1,64 @@
+PODS:
+  - Cuckoo (1.0.6)
+  - Nimble (8.0.2)
+  - OAuthSwift (2.0.0)
+  - Quick (2.1.0)
+  - ReachabilitySwift (4.3.1)
+  - RxBlocking (5.0.0):
+    - RxSwift (~> 5)
+  - RxCocoa (5.0.0):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.0.0):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.0)
+  - RxTest (5.0.0):
+    - RxSwift (~> 5)
+  - SwiftLint (0.33.0)
+  - SwiftQueue (3.2.0):
+    - ReachabilitySwift (~> 4.3)
+
+DEPENDENCIES:
+  - Cuckoo (~> 1.0.6)
+  - Nimble (~> 8)
+  - OAuthSwift (~> 2.0.0)
+  - Quick (~> 2.1.0)
+  - RxBlocking (~> 5.0.0)
+  - RxCocoa (~> 5)
+  - RxSwift (~> 5)
+  - RxTest (~> 5.0.0)
+  - SwiftLint
+  - SwiftQueue
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Cuckoo
+    - Nimble
+    - OAuthSwift
+    - Quick
+    - ReachabilitySwift
+    - RxBlocking
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - RxTest
+    - SwiftLint
+    - SwiftQueue
+
+SPEC CHECKSUMS:
+  Cuckoo: 8074fc309159c4862665b83798f5ad03e061e8bd
+  Nimble: 622629381bda1dd5678162f21f1368cec7cbba60
+  OAuthSwift: 6805456763cf1c7ae0c16765257ed430b7aacae7
+  Quick: 4be43f6634acfa727dd106bdf3929ce125ffa79d
+  ReachabilitySwift: 4032e2f59586e11e3b0ebe15b167abdd587a388b
+  RxBlocking: c67185d26498ea3cbe3e121917c3c16739e43123
+  RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
+  RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
+  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
+  RxTest: 4349afe98f564e0a9bc19063368904622d17d49a
+  SwiftLint: fed9c66336e41fc74dc48a73678380718f0c8b0e
+  SwiftQueue: 56ee5fbc0d387c3cf26d7c4539c0486511f08550
+
+PODFILE CHECKSUM: 34854105d6bbd4bb410aeecbeca1da6dbe18e587
+
+COCOAPODS: 1.7.2
