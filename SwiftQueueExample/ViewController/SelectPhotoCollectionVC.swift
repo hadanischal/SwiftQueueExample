@@ -72,7 +72,6 @@ class SelectPhotoCollectionVC: UICollectionViewController {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCollectionCell", for: indexPath) as? PhotoCollectionCell else {
             fatalError("PhotoCollectionCell is not found")
         }
-        cell.backgroundColor = UIColor.lightGray
         viewModel.getDisplayImage(withModel: self.imageList[indexPath.row])
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { model in

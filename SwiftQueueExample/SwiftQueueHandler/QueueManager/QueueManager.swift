@@ -12,10 +12,10 @@ import RxCocoa
 import SwiftQueue
 
 class QueueManager: QueueManagerProtocol {
-    private let manager: SwiftQueueManager = SwiftQueueManagerBuilder(creator: QueueJobCreator()).build()
-
+    private let manager: SwiftQueueManager
+    
     init(withQueueManager manager: SwiftQueueManager = QueueManagerBuilder.shared) {
-//        self.manager = manager
+        self.manager = manager
     }
 
     func add(job: JobProtocol) -> Completable {
