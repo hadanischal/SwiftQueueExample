@@ -28,6 +28,8 @@
 	<array>
 		<string>armv7</string>
 	</array>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>QueueExample app requires permission to access your photo library</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

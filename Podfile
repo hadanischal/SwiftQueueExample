@@ -6,7 +6,6 @@ target 'SwiftQueueExample' do
   use_frameworks!
   
   # Pods for SwiftQueueExample
-  pod 'OAuthSwift', '~> 2.0.0'
   pod 'SwiftQueue'
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
