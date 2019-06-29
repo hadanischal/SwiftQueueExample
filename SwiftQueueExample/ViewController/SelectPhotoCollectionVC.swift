@@ -15,16 +15,36 @@ private let reuseIdentifier = "PhotoCollectionCell"
 
 class SelectPhotoCollectionVC: UICollectionViewController {
 
-    private let selectedPhotoSubject = PublishSubject<UIImage>()
-    var selectedPhoto: Observable<UIImage> {
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
+
+    var viewModel: SelectPhotoViewModelProtocol!
+    private var imageList = [ImageModel]()
+
+    private let selectedPhotoSubject = PublishSubject<SelectPhotoModel>()
+    var selectedPhoto: Observable<SelectPhotoModel> {
         return selectedPhotoSubject.asObservable()
     }
 
-    private var images = [PHAsset]()
+    private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        populatePhotos()
+        viewModel = SelectPhotoViewModel()
+
+        self.cancelButton.rx.tap
+            .subscribe(onNext: { [weak self] _ in
+                self?.dismiss(animated: true)
+            }).disposed(by: disposeBag)
+
+        viewModel.imageList.debug()
+            .observeOn(MainScheduler.instance).debug()
+            .subscribe(onNext: { [weak self] image in
+                self?.imageList = image
+                DispatchQueue.main.async {
+                    self?.collectionView.reloadData()
+                }
+            }).disposed(by: disposeBag)
+        viewModel.fetchImage()
     }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -32,29 +52,19 @@ class SelectPhotoCollectionVC: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.images.count
+        return self.imageList.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
-        let selectedAsset = self.images[indexPath.row]
-        PHImageManager.default().requestImage(for: selectedAsset, targetSize: CGSize(width: 300, height: 300), contentMode: .aspectFit, options: nil) { [weak self] image, info in
-
-            guard let info = info else { return }
-
-            let isDegradedImage = info["PHImageResultIsDegradedKey"] as! Bool
-
-            if !isDegradedImage {
-
-                if let image = image {
-                    self?.selectedPhotoSubject.onNext(image)
-                    self?.dismiss(animated: true, completion: nil)
-                }
-
-            }
-
-        }
-
+        viewModel.getSelectedImage(withModel: self.imageList[indexPath.row])
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] model in
+                self?.selectedPhotoSubject.onNext(model)
+                self?.dismiss(animated: true, completion: nil)
+                }, onError: { error in
+                    print("on error ")
+                    print(error)
+            }).disposed(by: disposeBag)
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -62,44 +72,18 @@ class SelectPhotoCollectionVC: UICollectionViewController {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCollectionCell", for: indexPath) as? PhotoCollectionCell else {
             fatalError("PhotoCollectionCell is not found")
         }
-
-        let asset = self.images[indexPath.row]
-        let manager = PHImageManager.default()
-
-        manager.requestImage(for: asset, targetSize: CGSize(width: 100, height: 100), contentMode: .aspectFit, options: nil) { image, _ in
-
-            DispatchQueue.main.async {
-                cell.photoImageView.image = image
-            }
-
-        }
-
-        return cell
-
-    }
-
-    private func populatePhotos() {
-
-        PHPhotoLibrary.requestAuthorization { [weak self] status in
-
-            if status == .authorized {
-
-                // access the photos from photo library
-                let assets = PHAsset.fetchAssets(with: PHAssetMediaType.image, options: nil)
-
-                assets.enumerateObjects { (object, _, _) in
-                    self?.images.append(object)
-                }
-
-                self?.images.reverse()
+        cell.backgroundColor = UIColor.lightGray
+        viewModel.getDisplayImage(withModel: self.imageList[indexPath.row])
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { model in
+                print("model:", model)
                 DispatchQueue.main.async {
-                    self?.collectionView.reloadData()
+                    cell.photoImageView.image = model.image
                 }
-
-            }
-
-        }
-
+            }, onError: { error in
+                print("on error ")
+                print(error)
+            }).disposed(by: disposeBag)
+        return cell
     }
-
 }
