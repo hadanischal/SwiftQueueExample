@@ -9,5 +9,5 @@
 import Foundation
 
 protocol BaseViewModelProtocol {
-
+    func uploadImage(withModel model: SelectPhotoModel?)
 }

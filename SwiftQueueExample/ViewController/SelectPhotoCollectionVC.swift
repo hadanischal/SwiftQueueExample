@@ -36,8 +36,8 @@ class SelectPhotoCollectionVC: UICollectionViewController {
                 self?.dismiss(animated: true)
             }).disposed(by: disposeBag)
 
-        viewModel.imageList.debug()
-            .observeOn(MainScheduler.instance).debug()
+        viewModel.imageList
+            .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] image in
                 self?.imageList = image
                 DispatchQueue.main.async {
