@@ -119,6 +119,34 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AF373BF922C7169F000A5AD7 /* APIWrappers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = APIWrappers;
+			sourceTree = "<group>";
+		};
+		AF373BFA22C716A9000A5AD7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AF373BFB22C716B2000A5AD7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AF373BFC22C716BA000A5AD7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		AFE25E9B22C6F1210064BE6E = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +173,10 @@
 		AFE25EA622C6F1210064BE6E /* SwiftQueueExample */ = {
 			isa = PBXGroup;
 			children = (
+				AF373BFC22C716BA000A5AD7 /* ViewModel */,
+				AF373BFB22C716B2000A5AD7 /* Models */,
+				AF373BFA22C716A9000A5AD7 /* Extensions */,
+				AF373BF922C7169F000A5AD7 /* APIWrappers */,
 				AFE25EE522C70EFE0064BE6E /* Cell */,
 				AFE25EE022C70AE30064BE6E /* ViewController */,
 				AFE25ED922C6F8720064BE6E /* Resources */,

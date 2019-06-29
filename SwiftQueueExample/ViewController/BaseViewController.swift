@@ -38,7 +38,7 @@ class BaseViewController: UIViewController {
     private func updateUI(with image: UIImage) {
         self.photoImageView.image = image
         self.uploadButton.isEnabled = true
-        uploadButton.alpha = 0.4
+        uploadButton.alpha = 1
 
     }
 }
