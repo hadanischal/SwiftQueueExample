@@ -107,7 +107,12 @@
                             <outlet property="delegate" destination="9Cm-wM-Igu" id="ity-69-0sL"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="hkk-kb-cte"/>
+                    <navigationItem key="navigationItem" id="hkk-kb-cte">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="cancel" id="eYu-ax-pHu"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cancelButton" destination="eYu-ax-pHu" id="BXg-Bd-xji"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uFG-wu-b2Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -150,4 +155,7 @@
             <point key="canvasLocation" x="2202.898550724638" y="-565.17857142857144"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cancel" width="22" height="22"/>
+    </resources>
 </document>

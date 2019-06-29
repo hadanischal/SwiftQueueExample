@@ -28,7 +28,7 @@ class BaseViewController: UIViewController {
         }
         photosCVC.selectedPhoto.subscribe(onNext: { [weak self] photo in
             DispatchQueue.main.async {
-                self?.updateUI(with: photo)
+                self?.updateUI(with: photo.image)
             }
 
         }).disposed(by: disposeBag)
@@ -38,7 +38,6 @@ class BaseViewController: UIViewController {
     private func updateUI(with image: UIImage) {
         self.photoImageView.image = image
         self.uploadButton.isEnabled = true
-        uploadButton.alpha = 0.4
-
+        uploadButton.alpha = 1
     }
 }

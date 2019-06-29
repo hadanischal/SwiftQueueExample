@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		2F2D54CB5AD8EA0A8005AA99 /* Pods_SwiftQueueExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41E4DFEF7373BF4797AEFD26 /* Pods_SwiftQueueExample.framework */; };
 		8191D3F60669FCC84415A877 /* Pods_SwiftQueueExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C3400712F59AAAA0E97881B /* Pods_SwiftQueueExampleTests.framework */; };
+		AF373BFE22C71953000A5AD7 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF373BFD22C71953000A5AD7 /* BaseViewModel.swift */; };
+		AF373C0022C71963000A5AD7 /* BaseViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF373BFF22C71963000A5AD7 /* BaseViewModelProtocol.swift */; };
+		AF373C0222C71980000A5AD7 /* SelectPhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF373C0122C71980000A5AD7 /* SelectPhotoViewModel.swift */; };
+		AF373C0422C71998000A5AD7 /* SelectPhotoViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF373C0322C71998000A5AD7 /* SelectPhotoViewModelProtocol.swift */; };
+		AF373C0722C71B2C000A5AD7 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF373C0622C71B2C000A5AD7 /* ImageManager.swift */; };
+		AF373C0922C71B49000A5AD7 /* ImageManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF373C0822C71B49000A5AD7 /* ImageManagerProtocol.swift */; };
+		AF373C0B22C71BFA000A5AD7 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF373C0A22C71BFA000A5AD7 /* ImageModel.swift */; };
+		AF373C0D22C71F75000A5AD7 /* SelectPhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF373C0C22C71F75000A5AD7 /* SelectPhotoModel.swift */; };
 		AFE25EA822C6F1210064BE6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE25EA722C6F1210064BE6E /* AppDelegate.swift */; };
 		AFE25EAD22C6F1210064BE6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFE25EAB22C6F1210064BE6E /* Main.storyboard */; };
 		AFE25EB022C6F1210064BE6E /* SwiftQueueExample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFE25EAE22C6F1210064BE6E /* SwiftQueueExample.xcdatamodeld */; };
@@ -48,6 +56,14 @@
 		54BA70EC3EBDFD6EDDC8968E /* Pods-SwiftQueueExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftQueueExampleUITests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftQueueExampleUITests/Pods-SwiftQueueExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9C3400712F59AAAA0E97881B /* Pods_SwiftQueueExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftQueueExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF373BF822C715BF000A5AD7 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		AF373BFD22C71953000A5AD7 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		AF373BFF22C71963000A5AD7 /* BaseViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModelProtocol.swift; sourceTree = "<group>"; };
+		AF373C0122C71980000A5AD7 /* SelectPhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoViewModel.swift; sourceTree = "<group>"; };
+		AF373C0322C71998000A5AD7 /* SelectPhotoViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoViewModelProtocol.swift; sourceTree = "<group>"; };
+		AF373C0622C71B2C000A5AD7 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		AF373C0822C71B49000A5AD7 /* ImageManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManagerProtocol.swift; sourceTree = "<group>"; };
+		AF373C0A22C71BFA000A5AD7 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
+		AF373C0C22C71F75000A5AD7 /* SelectPhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoModel.swift; sourceTree = "<group>"; };
 		AFE25EA422C6F1210064BE6E /* SwiftQueueExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftQueueExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFE25EA722C6F1210064BE6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFE25EAC22C6F1210064BE6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -119,6 +135,49 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AF373BF922C7169F000A5AD7 /* APIWrappers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = APIWrappers;
+			sourceTree = "<group>";
+		};
+		AF373BFA22C716A9000A5AD7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AF373BFB22C716B2000A5AD7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AF373C0A22C71BFA000A5AD7 /* ImageModel.swift */,
+				AF373C0C22C71F75000A5AD7 /* SelectPhotoModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AF373BFC22C716BA000A5AD7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AF373BFF22C71963000A5AD7 /* BaseViewModelProtocol.swift */,
+				AF373BFD22C71953000A5AD7 /* BaseViewModel.swift */,
+				AF373C0322C71998000A5AD7 /* SelectPhotoViewModelProtocol.swift */,
+				AF373C0122C71980000A5AD7 /* SelectPhotoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AF373C0522C71B1D000A5AD7 /* ImageManager */ = {
+			isa = PBXGroup;
+			children = (
+				AF373C0822C71B49000A5AD7 /* ImageManagerProtocol.swift */,
+				AF373C0622C71B2C000A5AD7 /* ImageManager.swift */,
+			);
+			path = ImageManager;
+			sourceTree = "<group>";
+		};
 		AFE25E9B22C6F1210064BE6E = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +204,11 @@
 		AFE25EA622C6F1210064BE6E /* SwiftQueueExample */ = {
 			isa = PBXGroup;
 			children = (
+				AF373C0522C71B1D000A5AD7 /* ImageManager */,
+				AF373BFC22C716BA000A5AD7 /* ViewModel */,
+				AF373BFB22C716B2000A5AD7 /* Models */,
+				AF373BFA22C716A9000A5AD7 /* Extensions */,
+				AF373BF922C7169F000A5AD7 /* APIWrappers */,
 				AFE25EE522C70EFE0064BE6E /* Cell */,
 				AFE25EE022C70AE30064BE6E /* ViewController */,
 				AFE25ED922C6F8720064BE6E /* Resources */,
@@ -440,10 +504,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFE25EE922C70F6C0064BE6E /* PhotoCollectionCell.swift in Sources */,
+				AF373C0722C71B2C000A5AD7 /* ImageManager.swift in Sources */,
+				AF373C0D22C71F75000A5AD7 /* SelectPhotoModel.swift in Sources */,
 				AFE25EE422C70D850064BE6E /* BaseViewController.swift in Sources */,
 				AFE25EE722C70F330064BE6E /* SelectPhotoCollectionVC.swift in Sources */,
+				AF373C0222C71980000A5AD7 /* SelectPhotoViewModel.swift in Sources */,
+				AF373C0422C71998000A5AD7 /* SelectPhotoViewModelProtocol.swift in Sources */,
 				AFE25EA822C6F1210064BE6E /* AppDelegate.swift in Sources */,
+				AF373C0B22C71BFA000A5AD7 /* ImageModel.swift in Sources */,
+				AF373C0922C71B49000A5AD7 /* ImageManagerProtocol.swift in Sources */,
 				AFE25EB022C6F1210064BE6E /* SwiftQueueExample.xcdatamodeld in Sources */,
+				AF373C0022C71963000A5AD7 /* BaseViewModelProtocol.swift in Sources */,
+				AF373BFE22C71953000A5AD7 /* BaseViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
