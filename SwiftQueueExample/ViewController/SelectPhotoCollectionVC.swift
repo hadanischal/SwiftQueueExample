@@ -20,6 +20,7 @@ class SelectPhotoCollectionVC: UICollectionViewController {
     var viewModel: SelectPhotoViewModelProtocol!
     private var imageList = [ImageModel]()
 
+    //Return selected photo to BaseViewcontroller
     private let selectedPhotoSubject = PublishSubject<SelectPhotoModel>()
     var selectedPhoto: Observable<SelectPhotoModel> {
         return selectedPhotoSubject.asObservable()

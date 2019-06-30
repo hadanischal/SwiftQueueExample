@@ -11,12 +11,9 @@ import RxSwift
 import RxCocoa
 
 class BaseViewModel: BaseViewModelProtocol {
+    let selectedPhoto = PublishSubject<SelectPhotoModel>()
     private let queueManager: QueueManagerProtocol
     private let disposeBag = DisposeBag()
-
-    //    init(withBaseApiHandler apiHandler: BaseApiHandlerProtocol = BaseApiHandler()) {
-    //        self.apiHandler = apiHandler
-    //    }
 
     init(withQueueManage queueManager: QueueManagerProtocol = QueueManager()) {
         self.queueManager = queueManager

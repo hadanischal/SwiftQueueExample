@@ -13,7 +13,7 @@ import SwiftQueue
 
 class QueueManager: QueueManagerProtocol {
     private let manager: SwiftQueueManager
-    
+
     init(withQueueManager manager: SwiftQueueManager = QueueManagerBuilder.shared) {
         self.manager = manager
     }

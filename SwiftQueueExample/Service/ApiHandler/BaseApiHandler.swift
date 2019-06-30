@@ -8,7 +8,6 @@
 
 import Foundation
 import RxSwift
-import Alamofire
 //Mocking the API CALL
 //This class is  making POST request
 

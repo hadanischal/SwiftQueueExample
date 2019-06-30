@@ -2,3 +2,5 @@ excluded:
 - Pods
 - Pods/
 - SwiftLint/Common/3rdPartyLib
+- SwiftQueueExampleTests/GeneratedMocks.swift
+
