@@ -11,12 +11,9 @@ import RxSwift
 import RxCocoa
 
 class BaseViewModel: BaseViewModelProtocol {
+    let selectedPhoto = PublishSubject<SelectPhotoModel>()
     private let queueManager: QueueManagerProtocol
     private let disposeBag = DisposeBag()
-
-    //    init(withBaseApiHandler apiHandler: BaseApiHandlerProtocol = BaseApiHandler()) {
-    //        self.apiHandler = apiHandler
-    //    }
 
     init(withQueueManage queueManager: QueueManagerProtocol = QueueManager()) {
         self.queueManager = queueManager
@@ -28,7 +25,7 @@ class BaseViewModel: BaseViewModelProtocol {
         guard let image = model?.image else {
             return
         }
-        let model = JobModel(id: 1, title: image.accessibilityIdentifier ?? "foo", body: "bar", userId: 1, image: image)
+        let model = JobModel(id: Int.random(in: 1..<5), title: image.accessibilityIdentifier ?? "foo", body: "bar", userId: Int.random(in: 1..<5), image: image)
         self.queueManager.add(job: model)
             .subscribe(onCompleted: {
                 print("queue created")

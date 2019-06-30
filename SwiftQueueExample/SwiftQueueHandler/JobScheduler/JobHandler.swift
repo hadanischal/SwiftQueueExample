@@ -23,14 +23,14 @@ class JobHandler: Job {
 
     func onRun(callback: JobResult) {
         self.apiHandler.request(withParameters: params)
-            .asObservable()
-            .subscribe(onNext: { _ in
+            .subscribe(onCompleted: {
                 print("Job completed")
                 callback.done(.success)
             }, onError: { error in
                 print(error.localizedDescription)
                 callback.done(.fail(error))
-            }).disposed(by: disposeBag)
+            })
+            .disposed(by: disposeBag)
     }
 
     // Check if error is non fatal
@@ -43,8 +43,10 @@ class JobHandler: Job {
     func onRemove(result: JobCompletion) {
         switch result {
         case .success:
+            print("Job success")
             break
         case .fail:
+            print("Job fail")
             break
         }
     }
