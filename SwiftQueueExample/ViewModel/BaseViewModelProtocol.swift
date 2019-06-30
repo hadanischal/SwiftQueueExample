@@ -6,8 +6,9 @@
 //  Copyright © 2019 NischalHada. All rights reserved.
 //
 
-import Foundation
+import RxSwift
 
 protocol BaseViewModelProtocol {
-    func uploadImage(withModel model: SelectPhotoModel?)
+    func addInQueue(withModel model: SelectPhotoModel?)
+    var imageAdded: Observable<()> { get }
 }

@@ -25,9 +25,15 @@ class BaseViewController: UIViewController {
 
         uploadButton.rx.tap
             .bind { [weak self] _ in
-                self?.viewModel.uploadImage(withModel: self?.imageSelected)
-        }.disposed(by: disposeBag)
-     }
+                self?.viewModel.addInQueue(withModel: self?.imageSelected)
+            }.disposed(by: disposeBag)
+
+        self.viewModel.imageAdded
+            .subscribe { _ in
+                print("**** addInQueue ****")
+            }.disposed(by: disposeBag)
+
+    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let navC = segue.destination as? UINavigationController,
