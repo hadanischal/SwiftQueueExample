@@ -11,15 +11,18 @@ import RxSwift
 import RxCocoa
 
 class BaseViewModel: BaseViewModelProtocol {
-    let selectedPhoto = PublishSubject<SelectPhotoModel>()
+    var imageAdded: Observable<()>
+    private let imageAddedSubject = PublishSubject<()>()
+
     private let queueManager: QueueManagerProtocol
     private let disposeBag = DisposeBag()
 
     init(withQueueManage queueManager: QueueManagerProtocol = QueueManager()) {
         self.queueManager = queueManager
+        self.imageAdded =  imageAddedSubject.asObserver()
     }
 
-    func uploadImage(withModel model: SelectPhotoModel?) {
+    func addInQueue(withModel model: SelectPhotoModel?) {
         //model.image
         //use image in param for real time data
         guard let image = model?.image else {
@@ -28,6 +31,7 @@ class BaseViewModel: BaseViewModelProtocol {
         let model = JobModel(id: Int.random(in: 1..<5), title: image.accessibilityIdentifier ?? "foo", body: "bar", userId: Int.random(in: 1..<5), image: image)
         self.queueManager.add(job: model)
             .subscribe(onCompleted: {
+                self.imageAddedSubject.on(.next(()))
                 print("queue created")
             }, onError: { error in
                 print(error)

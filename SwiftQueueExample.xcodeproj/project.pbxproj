@@ -33,6 +33,12 @@
 		AF373C3222C7A005000A5AD7 /* JobModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF373C2A22C7A005000A5AD7 /* JobModel.swift */; };
 		AF373C3322C7A005000A5AD7 /* JobType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF373C2B22C7A005000A5AD7 /* JobType.swift */; };
 		AF373C3422C7A005000A5AD7 /* JobProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF373C2C22C7A005000A5AD7 /* JobProtocol.swift */; };
+		AFB5207922C86063004E6509 /* BaseViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB5207822C86063004E6509 /* BaseViewModelTests.swift */; };
+		AFB5207D22C873EB004E6509 /* SelectPhotoViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB5207C22C873EB004E6509 /* SelectPhotoViewModelTests.swift */; };
+		AFB5208022C877C1004E6509 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB5207F22C877C1004E6509 /* MockData.swift */; };
+		AFB5208222C88308004E6509 /* JobHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB5208122C88308004E6509 /* JobHandlerTests.swift */; };
+		AFB5208422C884E3004E6509 /* MockJobResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB5208322C884E3004E6509 /* MockJobResult.swift */; };
+		AFB5208622C88AD1004E6509 /* QueueManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB5208522C88AD1004E6509 /* QueueManagerTests.swift */; };
 		AFE25EA822C6F1210064BE6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE25EA722C6F1210064BE6E /* AppDelegate.swift */; };
 		AFE25EAD22C6F1210064BE6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFE25EAB22C6F1210064BE6E /* Main.storyboard */; };
 		AFE25EB022C6F1210064BE6E /* SwiftQueueExample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFE25EAE22C6F1210064BE6E /* SwiftQueueExample.xcdatamodeld */; };
@@ -93,6 +99,12 @@
 		AF373C2A22C7A005000A5AD7 /* JobModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobModel.swift; sourceTree = "<group>"; };
 		AF373C2B22C7A005000A5AD7 /* JobType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobType.swift; sourceTree = "<group>"; };
 		AF373C2C22C7A005000A5AD7 /* JobProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobProtocol.swift; sourceTree = "<group>"; };
+		AFB5207822C86063004E6509 /* BaseViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModelTests.swift; sourceTree = "<group>"; };
+		AFB5207C22C873EB004E6509 /* SelectPhotoViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoViewModelTests.swift; sourceTree = "<group>"; };
+		AFB5207F22C877C1004E6509 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		AFB5208122C88308004E6509 /* JobHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobHandlerTests.swift; sourceTree = "<group>"; };
+		AFB5208322C884E3004E6509 /* MockJobResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockJobResult.swift; sourceTree = "<group>"; };
+		AFB5208522C88AD1004E6509 /* QueueManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueManagerTests.swift; sourceTree = "<group>"; };
 		AFC165DB22C837C200FE462F /* Cuckoo-GeneratedMocks.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "Cuckoo-GeneratedMocks.sh"; sourceTree = "<group>"; };
 		AFE25EA422C6F1210064BE6E /* SwiftQueueExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftQueueExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFE25EA722C6F1210064BE6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -226,7 +238,7 @@
 			children = (
 				AF373C2222C7A005000A5AD7 /* QueueManager */,
 				AF373C2622C7A005000A5AD7 /* JobScheduler */,
-				AF373C2922C7A005000A5AD7 /* NewsJobHandler */,
+				AF373C2922C7A005000A5AD7 /* JobHandler */,
 			);
 			path = SwiftQueueHandler;
 			sourceTree = "<group>";
@@ -250,14 +262,24 @@
 			path = JobScheduler;
 			sourceTree = "<group>";
 		};
-		AF373C2922C7A005000A5AD7 /* NewsJobHandler */ = {
+		AF373C2922C7A005000A5AD7 /* JobHandler */ = {
 			isa = PBXGroup;
 			children = (
 				AF373C2A22C7A005000A5AD7 /* JobModel.swift */,
 				AF373C2B22C7A005000A5AD7 /* JobType.swift */,
 				AF373C2C22C7A005000A5AD7 /* JobProtocol.swift */,
 			);
-			path = NewsJobHandler;
+			path = JobHandler;
+			sourceTree = "<group>";
+		};
+		AFB5207E22C87794004E6509 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				AF18C88622C840AC008C8B55 /* GeneratedMocks.swift */,
+				AFB5207F22C877C1004E6509 /* MockData.swift */,
+				AFB5208322C884E3004E6509 /* MockJobResult.swift */,
+			);
+			name = Mocks;
 			sourceTree = "<group>";
 		};
 		AFC165DA22C837A000FE462F /* BuildScripts */ = {
@@ -316,9 +338,13 @@
 		AFE25EBE22C6F1240064BE6E /* SwiftQueueExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				AF18C88622C840AC008C8B55 /* GeneratedMocks.swift */,
+				AFB5207E22C87794004E6509 /* Mocks */,
 				AF18C88B22C84BD8008C8B55 /* MaterializedSequenceResult.swift */,
 				AF18C88822C8453F008C8B55 /* BaseApiHandlerTests.swift */,
+				AFB5207822C86063004E6509 /* BaseViewModelTests.swift */,
+				AFB5207C22C873EB004E6509 /* SelectPhotoViewModelTests.swift */,
+				AFB5208122C88308004E6509 /* JobHandlerTests.swift */,
+				AFB5208522C88AD1004E6509 /* QueueManagerTests.swift */,
 				AFE25EBF22C6F1240064BE6E /* SwiftQueueExampleTests.swift */,
 				AFE25EC122C6F1240064BE6E /* Info.plist */,
 			);
@@ -630,8 +656,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF18C88C22C84BD8008C8B55 /* MaterializedSequenceResult.swift in Sources */,
+				AFB5208022C877C1004E6509 /* MockData.swift in Sources */,
+				AFB5208422C884E3004E6509 /* MockJobResult.swift in Sources */,
+				AFB5207922C86063004E6509 /* BaseViewModelTests.swift in Sources */,
+				AFB5207D22C873EB004E6509 /* SelectPhotoViewModelTests.swift in Sources */,
 				AF18C89022C84E26008C8B55 /* GeneratedMocks.swift in Sources */,
+				AFB5208222C88308004E6509 /* JobHandlerTests.swift in Sources */,
 				AF18C88922C8453F008C8B55 /* BaseApiHandlerTests.swift in Sources */,
+				AFB5208622C88AD1004E6509 /* QueueManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -729,7 +761,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -784,7 +816,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
