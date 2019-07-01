@@ -29,8 +29,11 @@ class BaseViewController: UIViewController {
             }.disposed(by: disposeBag)
 
         self.viewModel.imageAdded
-            .subscribe { _ in
-                print("**** addInQueue ****")
+            .observeOn(MainScheduler.instance)
+            .subscribe { [weak self] _ in
+                print("**** added In Queue ****")
+                self?.showAlert(title: "Added in queue", message: "added in queue successfully")
+
             }.disposed(by: disposeBag)
 
     }

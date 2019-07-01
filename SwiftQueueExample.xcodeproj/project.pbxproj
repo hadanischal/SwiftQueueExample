@@ -47,6 +47,7 @@
 		AFE25EE422C70D850064BE6E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE25EE322C70D850064BE6E /* BaseViewController.swift */; };
 		AFE25EE722C70F330064BE6E /* SelectPhotoCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE25EE622C70F330064BE6E /* SelectPhotoCollectionVC.swift */; };
 		AFE25EE922C70F6C0064BE6E /* PhotoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE25EE822C70F6C0064BE6E /* PhotoCollectionCell.swift */; };
+		AFF2E84722CA188E00B78383 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF2E84622CA188E00B78383 /* UIViewController.swift */; };
 		C837B2957DBE17DC8E9FE2F4 /* Pods_SwiftQueueExampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FC594EAB792A712DE99155 /* Pods_SwiftQueueExampleUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +123,7 @@
 		AFE25EE322C70D850064BE6E /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		AFE25EE622C70F330064BE6E /* SelectPhotoCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoCollectionVC.swift; sourceTree = "<group>"; };
 		AFE25EE822C70F6C0064BE6E /* PhotoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionCell.swift; sourceTree = "<group>"; };
+		AFF2E84622CA188E00B78383 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		BB7C1C10951EEE91B46C2597 /* Pods-SwiftQueueExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftQueueExample.debug.xcconfig"; path = "Target Support Files/Pods-SwiftQueueExample/Pods-SwiftQueueExample.debug.xcconfig"; sourceTree = "<group>"; };
 		E667036012E9953BCEF61FD8 /* Pods-SwiftQueueExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftQueueExampleTests.release.xcconfig"; path = "Target Support Files/Pods-SwiftQueueExampleTests/Pods-SwiftQueueExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -238,7 +240,7 @@
 			children = (
 				AF373C2222C7A005000A5AD7 /* QueueManager */,
 				AF373C2622C7A005000A5AD7 /* JobScheduler */,
-				AF373C2922C7A005000A5AD7 /* JobHandler */,
+				AF373C2922C7A005000A5AD7 /* JobHelper */,
 			);
 			path = SwiftQueueHandler;
 			sourceTree = "<group>";
@@ -262,14 +264,14 @@
 			path = JobScheduler;
 			sourceTree = "<group>";
 		};
-		AF373C2922C7A005000A5AD7 /* JobHandler */ = {
+		AF373C2922C7A005000A5AD7 /* JobHelper */ = {
 			isa = PBXGroup;
 			children = (
 				AF373C2A22C7A005000A5AD7 /* JobModel.swift */,
 				AF373C2B22C7A005000A5AD7 /* JobType.swift */,
 				AF373C2C22C7A005000A5AD7 /* JobProtocol.swift */,
 			);
-			path = JobHandler;
+			path = JobHelper;
 			sourceTree = "<group>";
 		};
 		AFB5207E22C87794004E6509 /* Mocks */ = {
@@ -317,6 +319,7 @@
 		AFE25EA622C6F1210064BE6E /* SwiftQueueExample */ = {
 			isa = PBXGroup;
 			children = (
+				AFF2E84522CA187A00B78383 /* Extension */,
 				AF373C2122C7A005000A5AD7 /* SwiftQueueHandler */,
 				AF373C1622C77DAB000A5AD7 /* Service */,
 				AF373C0522C71B1D000A5AD7 /* ImageManager */,
@@ -382,6 +385,14 @@
 				AFE25EE822C70F6C0064BE6E /* PhotoCollectionCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		AFF2E84522CA187A00B78383 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AFF2E84622CA188E00B78383 /* UIViewController.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -643,6 +654,7 @@
 				AF373C3122C7A005000A5AD7 /* JobHandler.swift in Sources */,
 				AF373C0922C71B49000A5AD7 /* ImageManagerProtocol.swift in Sources */,
 				AFE25EB022C6F1210064BE6E /* SwiftQueueExample.xcdatamodeld in Sources */,
+				AFF2E84722CA188E00B78383 /* UIViewController.swift in Sources */,
 				AF373C2E22C7A005000A5AD7 /* QueueManagerBuilder.swift in Sources */,
 				AF373C0022C71963000A5AD7 /* BaseViewModelProtocol.swift in Sources */,
 				AF373C2D22C7A005000A5AD7 /* QueueManager.swift in Sources */,
