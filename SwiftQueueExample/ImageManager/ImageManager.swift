@@ -12,11 +12,10 @@ import RxCocoa
 import Photos
 
 class ImageManager: ImageManagerProtocol {
-    //     private let manager = PHImageManager.default()
-    private let manager: PHImageManager
+    private let manager: PHImageManager!
 
-    init() {
-        self.manager = PHImageManager.default()
+    init(withManager manager: PHImageManager = PHImageManager.default()) {
+        self.manager = manager
     }
 
     // access the photos from photo library

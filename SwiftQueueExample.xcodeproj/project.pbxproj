@@ -274,6 +274,14 @@
 			path = JobHelper;
 			sourceTree = "<group>";
 		};
+		AF567B7D22D4158E006EB878 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				AF18C88B22C84BD8008C8B55 /* MaterializedSequenceResult.swift */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
 		AFB5207E22C87794004E6509 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -341,8 +349,8 @@
 		AFE25EBE22C6F1240064BE6E /* SwiftQueueExampleTests */ = {
 			isa = PBXGroup;
 			children = (
+				AF567B7D22D4158E006EB878 /* Utility */,
 				AFB5207E22C87794004E6509 /* Mocks */,
-				AF18C88B22C84BD8008C8B55 /* MaterializedSequenceResult.swift */,
 				AF18C88822C8453F008C8B55 /* BaseApiHandlerTests.swift */,
 				AFB5207822C86063004E6509 /* BaseViewModelTests.swift */,
 				AFB5207C22C873EB004E6509 /* SelectPhotoViewModelTests.swift */,
