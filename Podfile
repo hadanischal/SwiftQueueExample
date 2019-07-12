@@ -20,7 +20,6 @@ target 'SwiftQueueExample' do
     pod 'Cuckoo', '~> 1.0.6'
     pod 'Quick', '~> 2.1.0'
     pod 'Nimble', '~> 8'
-    pod 'RxNimble'
   end
   
   target 'SwiftQueueExampleUITests' do
