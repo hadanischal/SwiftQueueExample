@@ -47,6 +47,9 @@
 		AFE25EE422C70D850064BE6E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE25EE322C70D850064BE6E /* BaseViewController.swift */; };
 		AFE25EE722C70F330064BE6E /* SelectPhotoCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE25EE622C70F330064BE6E /* SelectPhotoCollectionVC.swift */; };
 		AFE25EE922C70F6C0064BE6E /* PhotoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE25EE822C70F6C0064BE6E /* PhotoCollectionCell.swift */; };
+		AFE424F522EF189D00815A39 /* PhotoLibraryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE424F422EF189D00815A39 /* PhotoLibraryHelper.swift */; };
+		AFE424F722EF18B200815A39 /* PhotoLibraryHelperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE424F622EF18B200815A39 /* PhotoLibraryHelperProtocol.swift */; };
+		AFE424F922EF193C00815A39 /* PhotoAuthorizationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE424F822EF193C00815A39 /* PhotoAuthorizationStatus.swift */; };
 		AFF2E84722CA188E00B78383 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF2E84622CA188E00B78383 /* UIViewController.swift */; };
 		C837B2957DBE17DC8E9FE2F4 /* Pods_SwiftQueueExampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FC594EAB792A712DE99155 /* Pods_SwiftQueueExampleUITests.framework */; };
 /* End PBXBuildFile section */
@@ -123,6 +126,9 @@
 		AFE25EE322C70D850064BE6E /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		AFE25EE622C70F330064BE6E /* SelectPhotoCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoCollectionVC.swift; sourceTree = "<group>"; };
 		AFE25EE822C70F6C0064BE6E /* PhotoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionCell.swift; sourceTree = "<group>"; };
+		AFE424F422EF189D00815A39 /* PhotoLibraryHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryHelper.swift; sourceTree = "<group>"; };
+		AFE424F622EF18B200815A39 /* PhotoLibraryHelperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryHelperProtocol.swift; sourceTree = "<group>"; };
+		AFE424F822EF193C00815A39 /* PhotoAuthorizationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAuthorizationStatus.swift; sourceTree = "<group>"; };
 		AFF2E84622CA188E00B78383 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		BB7C1C10951EEE91B46C2597 /* Pods-SwiftQueueExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftQueueExample.debug.xcconfig"; path = "Target Support Files/Pods-SwiftQueueExample/Pods-SwiftQueueExample.debug.xcconfig"; sourceTree = "<group>"; };
 		E667036012E9953BCEF61FD8 /* Pods-SwiftQueueExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftQueueExampleTests.release.xcconfig"; path = "Target Support Files/Pods-SwiftQueueExampleTests/Pods-SwiftQueueExampleTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -202,6 +208,7 @@
 		AF373C0522C71B1D000A5AD7 /* ImageManager */ = {
 			isa = PBXGroup;
 			children = (
+				AFE424F322EF188B00815A39 /* PhotoLibraryHelper */,
 				AF373C0822C71B49000A5AD7 /* ImageManagerProtocol.swift */,
 				AF373C0622C71B2C000A5AD7 /* ImageManager.swift */,
 			);
@@ -393,6 +400,16 @@
 				AFE25EE822C70F6C0064BE6E /* PhotoCollectionCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		AFE424F322EF188B00815A39 /* PhotoLibraryHelper */ = {
+			isa = PBXGroup;
+			children = (
+				AFE424F822EF193C00815A39 /* PhotoAuthorizationStatus.swift */,
+				AFE424F622EF18B200815A39 /* PhotoLibraryHelperProtocol.swift */,
+				AFE424F422EF189D00815A39 /* PhotoLibraryHelper.swift */,
+			);
+			path = PhotoLibraryHelper;
 			sourceTree = "<group>";
 		};
 		AFF2E84522CA187A00B78383 /* Extension */ = {
@@ -646,6 +663,7 @@
 				AFE25EE922C70F6C0064BE6E /* PhotoCollectionCell.swift in Sources */,
 				AF373C3022C7A005000A5AD7 /* QueueJobCreator.swift in Sources */,
 				AF373C3222C7A005000A5AD7 /* JobModel.swift in Sources */,
+				AFE424F722EF18B200815A39 /* PhotoLibraryHelperProtocol.swift in Sources */,
 				AF373C0722C71B2C000A5AD7 /* ImageManager.swift in Sources */,
 				AF373C1122C77479000A5AD7 /* BaseApiHandler.swift in Sources */,
 				AF373C0D22C71F75000A5AD7 /* SelectPhotoModel.swift in Sources */,
@@ -655,12 +673,14 @@
 				AFE25EE722C70F330064BE6E /* SelectPhotoCollectionVC.swift in Sources */,
 				AF373C0222C71980000A5AD7 /* SelectPhotoViewModel.swift in Sources */,
 				AF373C0422C71998000A5AD7 /* SelectPhotoViewModelProtocol.swift in Sources */,
+				AFE424F522EF189D00815A39 /* PhotoLibraryHelper.swift in Sources */,
 				AFE25EA822C6F1210064BE6E /* AppDelegate.swift in Sources */,
 				AF373C0B22C71BFA000A5AD7 /* ImageModel.swift in Sources */,
 				AF373C1322C774B1000A5AD7 /* BaseApiHandlerProtocol.swift in Sources */,
 				AF373C3422C7A005000A5AD7 /* JobProtocol.swift in Sources */,
 				AF373C3122C7A005000A5AD7 /* JobHandler.swift in Sources */,
 				AF373C0922C71B49000A5AD7 /* ImageManagerProtocol.swift in Sources */,
+				AFE424F922EF193C00815A39 /* PhotoAuthorizationStatus.swift in Sources */,
 				AFE25EB022C6F1210064BE6E /* SwiftQueueExample.xcdatamodeld in Sources */,
 				AFF2E84722CA188E00B78383 /* UIViewController.swift in Sources */,
 				AF373C2E22C7A005000A5AD7 /* QueueManagerBuilder.swift in Sources */,
