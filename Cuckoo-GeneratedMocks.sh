@@ -27,5 +27,5 @@ ${PODS_ROOT}/Cuckoo/run generate --testable "${PROJECT_NAME}" \
 "$INPUT_DIR/ImageManager/ImageManager.swift" \
 "$INPUT_DIR/SwiftQueueHandler/QueueManager/QueueManagerProtocol.swift" \
 "$INPUT_DIR/SwiftQueueHandler/JobScheduler/JobHandler.swift" \
-"$INPUT_DIR/SwiftQueueHandler/JobHandler/JobProtocol.swift"
+"$INPUT_DIR/SwiftQueueHandler/JobHelper/JobProtocol.swift"
 # ... and so forth
