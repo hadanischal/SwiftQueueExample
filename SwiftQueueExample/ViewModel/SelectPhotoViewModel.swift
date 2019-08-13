@@ -18,7 +18,8 @@ class SelectPhotoViewModel: SelectPhotoViewModelProtocol {
     var imageList: Observable<[ImageModel]>
     private let imageListSubject = PublishSubject<[ImageModel]>()
 
-    init(withImageManager imageManager: ImageManagerProtocol = ImageManager()) {
+    init(withImageManager imageManager: ImageManagerProtocol = ImageManager()
+        ) {
         self.imageManager = imageManager
         self.imageList = imageListSubject.asObserver()
     }
