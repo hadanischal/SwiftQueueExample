@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		041DF5C32302CFFD007392C9 /* AVFoundationHelperProtocolRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041DF5C22302CFFD007392C9 /* AVFoundationHelperProtocolRx.swift */; };
-		041DF5C52302D00D007392C9 /* AVFoundationHelperRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041DF5C42302D00D007392C9 /* AVFoundationHelperRx.swift */; };
-		041DF5C72302D01C007392C9 /* CameraStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041DF5C62302D01C007392C9 /* CameraStatus.swift */; };
+		041DF5C32302CFFD007392C9 /* PHPhotoHelperProtocolRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041DF5C22302CFFD007392C9 /* PHPhotoHelperProtocolRx.swift */; };
+		041DF5C52302D00D007392C9 /* PHPhotoHelperRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041DF5C42302D00D007392C9 /* PHPhotoHelperRx.swift */; };
+		041DF5C72302D01C007392C9 /* PhotoStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041DF5C62302D01C007392C9 /* PhotoStatus.swift */; };
 		12285E250E56098BD442DFB2 /* Pods_SwiftQueueExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F055D1633C0BE7D4338FE033 /* Pods_SwiftQueueExampleTests.framework */; };
 		AF18C88922C8453F008C8B55 /* BaseApiHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF18C88822C8453F008C8B55 /* BaseApiHandlerTests.swift */; };
 		AF18C88C22C84BD8008C8B55 /* MaterializedSequenceResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF18C88B22C84BD8008C8B55 /* MaterializedSequenceResult.swift */; };
@@ -75,9 +75,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		041DF5C22302CFFD007392C9 /* AVFoundationHelperProtocolRx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVFoundationHelperProtocolRx.swift; sourceTree = "<group>"; };
-		041DF5C42302D00D007392C9 /* AVFoundationHelperRx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVFoundationHelperRx.swift; sourceTree = "<group>"; };
-		041DF5C62302D01C007392C9 /* CameraStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraStatus.swift; sourceTree = "<group>"; };
+		041DF5C22302CFFD007392C9 /* PHPhotoHelperProtocolRx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHPhotoHelperProtocolRx.swift; sourceTree = "<group>"; };
+		041DF5C42302D00D007392C9 /* PHPhotoHelperRx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHPhotoHelperRx.swift; sourceTree = "<group>"; };
+		041DF5C62302D01C007392C9 /* PhotoStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStatus.swift; sourceTree = "<group>"; };
 		0A87CBB801A73FCCD41C949F /* Pods-SwiftQueueExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftQueueExampleUITests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftQueueExampleUITests/Pods-SwiftQueueExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1CB800617C739752FDE635C1 /* Pods-SwiftQueueExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftQueueExample.debug.xcconfig"; path = "Target Support Files/Pods-SwiftQueueExample/Pods-SwiftQueueExample.debug.xcconfig"; sourceTree = "<group>"; };
 		3F6BB682F1B4843467C4BC10 /* Pods-SwiftQueueExampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftQueueExampleUITests.release.xcconfig"; path = "Target Support Files/Pods-SwiftQueueExampleUITests/Pods-SwiftQueueExampleUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -171,9 +171,9 @@
 		041DF5C12302CFDE007392C9 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				041DF5C22302CFFD007392C9 /* AVFoundationHelperProtocolRx.swift */,
-				041DF5C42302D00D007392C9 /* AVFoundationHelperRx.swift */,
-				041DF5C62302D01C007392C9 /* CameraStatus.swift */,
+				041DF5C22302CFFD007392C9 /* PHPhotoHelperProtocolRx.swift */,
+				041DF5C42302D00D007392C9 /* PHPhotoHelperRx.swift */,
+				041DF5C62302D01C007392C9 /* PhotoStatus.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -703,7 +703,7 @@
 				AF373C1122C77479000A5AD7 /* BaseApiHandler.swift in Sources */,
 				AF373C0D22C71F75000A5AD7 /* SelectPhotoModel.swift in Sources */,
 				AF373C1A22C77DD9000A5AD7 /* WebService.swift in Sources */,
-				041DF5C52302D00D007392C9 /* AVFoundationHelperRx.swift in Sources */,
+				041DF5C52302D00D007392C9 /* PHPhotoHelperRx.swift in Sources */,
 				AF373C1822C77DC4000A5AD7 /* WebServiceProtocol.swift in Sources */,
 				AFE25EE422C70D850064BE6E /* BaseViewController.swift in Sources */,
 				AFE25EE722C70F330064BE6E /* SelectPhotoCollectionVC.swift in Sources */,
@@ -718,9 +718,9 @@
 				AF373C0922C71B49000A5AD7 /* ImageManagerProtocol.swift in Sources */,
 				AFE424F922EF193C00815A39 /* PhotoAuthorizationStatus.swift in Sources */,
 				AFE25EB022C6F1210064BE6E /* SwiftQueueExample.xcdatamodeld in Sources */,
-				041DF5C32302CFFD007392C9 /* AVFoundationHelperProtocolRx.swift in Sources */,
+				041DF5C32302CFFD007392C9 /* PHPhotoHelperProtocolRx.swift in Sources */,
 				AFF2E84722CA188E00B78383 /* UIViewController.swift in Sources */,
-				041DF5C72302D01C007392C9 /* CameraStatus.swift in Sources */,
+				041DF5C72302D01C007392C9 /* PhotoStatus.swift in Sources */,
 				AF373C2E22C7A005000A5AD7 /* QueueManagerBuilder.swift in Sources */,
 				AF373C0022C71963000A5AD7 /* BaseViewModelProtocol.swift in Sources */,
 				AF373C2D22C7A005000A5AD7 /* QueueManager.swift in Sources */,
