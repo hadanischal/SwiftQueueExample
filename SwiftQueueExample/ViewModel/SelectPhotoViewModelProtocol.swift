@@ -8,9 +8,15 @@
 
 import RxSwift
 
+enum PhotoCameraStatus {
+    case denied
+}
+
 protocol SelectPhotoViewModelProtocol {
     var imageList: Observable<[ImageModel]> { get }
     func fetchImage()
     func getDisplayImage(withModel model: ImageModel) -> Observable<SelectPhotoModel>
     func getSelectedImage(withModel model: ImageModel) -> Observable<SelectPhotoModel>
+    func handelAuthorizationStatus()
+    var photoCameraStatus: Observable<PhotoCameraStatus> { get }
 }

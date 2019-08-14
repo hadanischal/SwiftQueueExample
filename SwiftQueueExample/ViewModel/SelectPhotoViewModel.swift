@@ -12,16 +12,24 @@ import RxCocoa
 import Photos
 
 class SelectPhotoViewModel: SelectPhotoViewModelProtocol {
+    //input
     private let imageManager: ImageManagerProtocol
+    private let phPhotoHelper: PHPhotoHelperProtocolRx
     private let disposeBag = DisposeBag()
 
     var imageList: Observable<[ImageModel]>
-    private let imageListSubject = PublishSubject<[ImageModel]>()
+    var photoCameraStatus: Observable<PhotoCameraStatus>
 
-    init(withImageManager imageManager: ImageManagerProtocol = ImageManager()
-        ) {
+    private let imageListSubject = PublishSubject<[ImageModel]>()
+    private let photoCameraStatusSubject = PublishSubject<PhotoCameraStatus>()
+
+    init(withImageManager imageManager: ImageManagerProtocol = ImageManager(),
+         phPhotoHelper: PHPhotoHelperProtocolRx = PHPhotoHelperRx()) {
         self.imageManager = imageManager
+        self.phPhotoHelper = phPhotoHelper
         self.imageList = imageListSubject.asObserver()
+        self.photoCameraStatus = photoCameraStatusSubject.asObserver()
+        
     }
 
     func fetchImage() {
@@ -46,6 +54,36 @@ class SelectPhotoViewModel: SelectPhotoViewModelProtocol {
     func getSelectedImage(withModel model: ImageModel) -> Observable<SelectPhotoModel> {
         return self.imageManager.getSelectedImage(withModel: model)
             .asObservable()
+    }
+    
+    func handelAuthorizationStatus() {
+        phPhotoHelper.authorizationStatus
+            .subscribe(onSuccess: { [weak self] status in
+                switch status {
+                case .notDetermined:
+                    self?.requestAccess()
+                    
+                case .authorized:
+                    self?.fetchImage()
+                    
+                case .restricted, .denied:
+                    self?.photoCameraStatusSubject.on(.next(PhotoCameraStatus.denied))
+                    
+                }
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func requestAccess() {
+        self.phPhotoHelper.requestAccess
+            .subscribe(onSuccess: { [weak self] status in
+                if status {
+                    self?.fetchImage()
+                } else {
+                    self?.photoCameraStatusSubject.on(.next(PhotoCameraStatus.denied))
+                }
+            })
+            .disposed(by: self.disposeBag)
     }
 
 }

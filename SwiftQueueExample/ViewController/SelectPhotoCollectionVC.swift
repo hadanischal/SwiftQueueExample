@@ -45,7 +45,15 @@ class SelectPhotoCollectionVC: UICollectionViewController {
                     self?.collectionView.reloadData()
                 }
             }).disposed(by: disposeBag)
-        viewModel.fetchImage()
+        viewModel.photoCameraStatus
+        .asDriver(onErrorJustReturn: .denied)
+            .drive(onNext: { [weak self] status in
+                print("status:", status)
+                self?.alertPhotoAccessNeeded()
+            }).disposed(by: disposeBag)
+ 
+        viewModel.handelAuthorizationStatus()
+//        viewModel.fetchImage()
     }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -86,4 +94,29 @@ class SelectPhotoCollectionVC: UICollectionViewController {
             }).disposed(by: disposeBag)
         return cell
     }
+}
+
+extension SelectPhotoCollectionVC {
+    // MARK: - Alert Photo Access Needed
+    // TODO: Manage Alert properly
+    
+    private func alertPhotoAccessNeeded() {
+        let settingsAppURL = URL(string: UIApplication.openSettingsURLString)!
+        let appName = Bundle.main.displayName ?? "This app"
+        self.alert(title: "This feature requires photo access",
+                   message: "In iPhone settings, tap \(appName) and turn on Photos",
+            actions: [AlertAction(title: "Settings", type: 0, style: .default),
+                      AlertAction(title: "Cancel", type: 1, style: .destructive)],
+            vc: self).observeOn(MainScheduler.instance)
+            .subscribe(onNext: { index in
+                print ("index: \(index)")
+                if index == 0 {
+                    UIApplication.shared.open(settingsAppURL)
+                } else if index == 1 {
+                    self.navigationController?.dismiss(animated: true)
+                }
+                self.dismiss(animated: true)
+            }).disposed(by: disposeBag)
+    }
+
 }
