@@ -1,5 +1,5 @@
 //
-//  AVFoundationHelperProtocolRx.swift
+//  PHPhotoHelperProtocolRx.swift
 //  SwiftQueueExample
 //
 //  Created by Nischal Hada on 13/8/19.
@@ -8,9 +8,9 @@
 
 import RxSwift
 
-protocol AVFoundationHelperProtocolRx {
+protocol PHPhotoHelperProtocolRx {
     // MARK: - Check and Respond to Camera Authorization Status
-    var authorizationStatus: Single<CameraStatus> { get }
+    var authorizationStatus: Single<PhotoStatus> { get }
     
     // MARK: - Request Camera Permission
     var requestAccess: Single<Bool> { get }

@@ -1,5 +1,5 @@
 //
-//  CameraStatus.swift
+//  PhotoStatus.swift
 //  SwiftQueueExample
 //
 //  Created by Nischal Hada on 13/8/19.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum CameraStatus {
+public enum PhotoStatus {
     case notDetermined
     case restricted
     case denied
