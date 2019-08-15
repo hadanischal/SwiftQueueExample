@@ -9,11 +9,11 @@
 import UIKit
 
 public struct AlertAction {
-    
+
     public let title: String
     public let type: Int
     public let style: UIAlertAction.Style
-    
+
     public init(title: String,
                 type: Int = 0,
                 style: UIAlertAction.Style = .default) {

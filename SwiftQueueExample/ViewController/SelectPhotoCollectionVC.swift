@@ -51,7 +51,7 @@ class SelectPhotoCollectionVC: UICollectionViewController {
                 print("status:", status)
                 self?.alertPhotoAccessNeeded()
             }).disposed(by: disposeBag)
- 
+
         viewModel.handelAuthorizationStatus()
 //        viewModel.fetchImage()
     }
@@ -99,7 +99,7 @@ class SelectPhotoCollectionVC: UICollectionViewController {
 extension SelectPhotoCollectionVC {
     // MARK: - Alert Photo Access Needed
     // TODO: Manage Alert properly
-    
+
     private func alertPhotoAccessNeeded() {
         let settingsAppURL = URL(string: UIApplication.openSettingsURLString)!
         let appName = Bundle.main.displayName ?? "This app"
@@ -112,8 +112,6 @@ extension SelectPhotoCollectionVC {
                 print ("index: \(index)")
                 if index == 0 {
                     UIApplication.shared.open(settingsAppURL)
-                } else if index == 1 {
-                    self.navigationController?.dismiss(animated: true)
                 }
                 self.dismiss(animated: true)
             }).disposed(by: disposeBag)

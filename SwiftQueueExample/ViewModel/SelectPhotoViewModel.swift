@@ -29,7 +29,7 @@ class SelectPhotoViewModel: SelectPhotoViewModelProtocol {
         self.phPhotoHelper = phPhotoHelper
         self.imageList = imageListSubject.asObserver()
         self.photoCameraStatus = photoCameraStatusSubject.asObserver()
-        
+
     }
 
     func fetchImage() {
@@ -55,25 +55,25 @@ class SelectPhotoViewModel: SelectPhotoViewModelProtocol {
         return self.imageManager.getSelectedImage(withModel: model)
             .asObservable()
     }
-    
+
     func handelAuthorizationStatus() {
         phPhotoHelper.authorizationStatus
             .subscribe(onSuccess: { [weak self] status in
                 switch status {
                 case .notDetermined:
                     self?.requestAccess()
-                    
+
                 case .authorized:
                     self?.fetchImage()
-                    
+
                 case .restricted, .denied:
                     self?.photoCameraStatusSubject.on(.next(PhotoCameraStatus.denied))
-                    
+
                 }
             })
             .disposed(by: disposeBag)
     }
-    
+
     private func requestAccess() {
         self.phPhotoHelper.requestAccess
             .subscribe(onSuccess: { [weak self] status in
