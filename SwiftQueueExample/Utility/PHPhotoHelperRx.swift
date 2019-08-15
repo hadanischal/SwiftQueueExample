@@ -10,9 +10,9 @@ import RxSwift
 import Photos
 
 class PHPhotoHelperRx: PHPhotoHelperProtocolRx {
-    
+
     // MARK: - Check and Respond to Camera Authorization Status
-    
+
     var authorizationStatus: Single<PhotoStatus> {
         return Single<PhotoStatus>.create { single in
             let photoAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
@@ -31,12 +31,12 @@ class PHPhotoHelperRx: PHPhotoHelperProtocolRx {
             return Disposables.create()
         }
     }
-    
+
     // MARK: - Request Camera Permission
-    
+
     var requestAccess: Single<Bool> {
         return Single<Bool>.create { single in
-            PHPhotoLibrary.requestAuthorization{ authorizationStatus in
+            PHPhotoLibrary.requestAuthorization { authorizationStatus in
                 let status = authorizationStatus == .authorized
                 single(.success(status))
             }

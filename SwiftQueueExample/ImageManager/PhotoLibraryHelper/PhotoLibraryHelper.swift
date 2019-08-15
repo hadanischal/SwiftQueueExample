@@ -30,7 +30,7 @@ class PhotoLibraryHelper: PhotoLibraryHelperProtocol {
             return Disposables.create()
         }
     }
-    
+
     func requestAuthorization() -> Single<Bool> {
         return Single<Bool>.create { single in
             PHPhotoLibrary.requestAuthorization { status in

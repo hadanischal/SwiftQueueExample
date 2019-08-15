@@ -11,7 +11,7 @@ import RxSwift
 
 // MARK: - UIAlertController
 extension UIAlertController {
-    
+
     public func addAction(actions: [AlertAction]) -> Observable<Int> {
         return Observable.create { [weak self] observer in
             actions.map { action in
@@ -22,7 +22,7 @@ extension UIAlertController {
                 }.forEach { action in
                     self?.addAction(action)
             }
-            
+
             return Disposables.create {
                 self?.dismiss(animated: true, completion: nil)
             }
