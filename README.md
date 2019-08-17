@@ -19,7 +19,22 @@ This is a simple Demo project which aims to display Swift Queue Example.
 * Library rely on Operation and OperationQueue to make sure all tasks will run in order.
 
 ## Guidelines:
-* If you need help, open an issue.
-* If you found a bug, open an issue.
-* If you have a feature request, open an issue.
-* If you want to contribute, We would love you for the contribution.
+
+### 1. Installation
+#### CocoaPods
+* Open Terminal and navigate to the directory that contains your SwiftQueueExample project by using the cd command:
+```
+cd ~/Path/To/Folder/Containing/SwiftQueueExample
+```
+* Next, enter the following command:
+```pod install```
+
+### 2. Cuckoo GeneratedMocks
+#### Cuckoo Mocks for Unit testing
+* Open Terminal and navigate to the directory that contains your SwiftQueueExample project by using the cd command:
+```
+cd ~/Path/To/Folder/Containing/SwiftQueueExample
+```
+* Next, enter the following command:
+```./Cuckoo-GeneratedMocks.sh```
+
