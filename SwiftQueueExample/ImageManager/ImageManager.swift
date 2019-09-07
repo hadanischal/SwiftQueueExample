@@ -53,8 +53,12 @@ class ImageManager: ImageManagerProtocol {
     func getSelectedImage(withModel model: ImageModel) -> Observable<SelectPhotoModel> {
         return Observable<SelectPhotoModel>.create { observer in
             self.manager.requestImage(for: model.image, targetSize: CGSize(width: 300, height: 300), contentMode: .aspectFit, options: nil) { image, info in
-                guard let info = info else { return }
-                let isDegradedImage = info["PHImageResultIsDegradedKey"] as! Bool
+                guard
+                    let info = info,
+                    let isDegradedImage = info["PHImageResultIsDegradedKey"] as? Bool else {
+                        return
+                }
+
                 if !isDegradedImage {
                     if let image = image {
                         let selectedImage = SelectPhotoModel(image: image)

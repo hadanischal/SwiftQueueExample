@@ -15,6 +15,7 @@ import RxBlocking
 import RxSwift
 @testable import SwiftQueueExample
 
+// swiftlint:disable function_body_length
 class SelectPhotoViewModelTests: QuickSpec {
 
     override func spec() {
