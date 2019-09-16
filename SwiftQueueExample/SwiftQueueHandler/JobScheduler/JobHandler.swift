@@ -44,10 +44,8 @@ class JobHandler: Job {
         switch result {
         case .success:
             print("Job success")
-            break
         case .fail:
             print("Job fail")
-            break
         }
     }
 }
