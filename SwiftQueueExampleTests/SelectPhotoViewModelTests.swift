@@ -21,7 +21,7 @@ class SelectPhotoViewModelTests: QuickSpec {
     override func spec() {
         var testViewModel: SelectPhotoViewModel!
         var mockImageManager: MockImageManagerProtocol!
-        var mockPHPhotoHelper: MockPHPhotoHelperProtocolRx!
+        var mockPHPhotoHelper: MockPHPhotoHelperProtocol!
         var testScheduler: TestScheduler!
 
         describe("SelectPhotoViewModel") {
@@ -33,7 +33,7 @@ class SelectPhotoViewModelTests: QuickSpec {
                     when(stub.getDisplayImage(withModel: any())).thenReturn(Observable<SelectPhotoModel>.just(MockData().selectPhotoModel))
                     when(stub.getSelectedImage(withModel: any())).thenReturn(Observable<SelectPhotoModel>.just(MockData().selectPhotoModel))
                 })
-                mockPHPhotoHelper = MockPHPhotoHelperProtocolRx()
+                mockPHPhotoHelper = MockPHPhotoHelperProtocol()
                 stub(mockPHPhotoHelper, block: { stub in
                     when(stub.authorizationStatus).get.thenReturn(Single.just(.authorized))
                     when(stub.requestAccess).get.thenReturn(Single.just(true))

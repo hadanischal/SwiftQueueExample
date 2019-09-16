@@ -14,7 +14,7 @@ import Photos
 class SelectPhotoViewModel: SelectPhotoViewModelProtocol {
     //input
     private let imageManager: ImageManagerProtocol
-    private let phPhotoHelper: PHPhotoHelperProtocolRx
+    private let phPhotoHelper: PHPhotoHelperProtocol
     private let disposeBag = DisposeBag()
 
     var imageList: Observable<[ImageModel]>
@@ -24,7 +24,7 @@ class SelectPhotoViewModel: SelectPhotoViewModelProtocol {
     private let photoCameraStatusSubject = PublishSubject<PhotoCameraStatus>()
 
     init(withImageManager imageManager: ImageManagerProtocol = ImageManager(),
-         phPhotoHelper: PHPhotoHelperProtocolRx = PHPhotoHelperRx()) {
+         phPhotoHelper: PHPhotoHelperProtocol = PHPhotoHelper()) {
         self.imageManager = imageManager
         self.phPhotoHelper = phPhotoHelper
         self.imageList = imageListSubject.asObserver()

@@ -11,8 +11,6 @@ import Photos
 import RxSwift
 import RxCocoa
 
-private let reuseIdentifier = "PhotoCollectionCell"
-
 class SelectPhotoCollectionVC: UICollectionViewController {
 
     @IBOutlet weak var cancelButton: UIBarButtonItem!
@@ -106,7 +104,7 @@ extension SelectPhotoCollectionVC {
                    message: "In iPhone settings, tap \(appName) and turn on Photos",
             actions: [AlertAction(title: "Settings", type: 0, style: .default),
                       AlertAction(title: "Cancel", type: 1, style: .destructive)],
-            vc: self).observeOn(MainScheduler.instance)
+            viewController: self).observeOn(MainScheduler.instance)
             .subscribe(onNext: { index in
                 print ("index: \(index)")
                 if index == 0 {

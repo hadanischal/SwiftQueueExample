@@ -1,5 +1,5 @@
 //
-//  PHPhotoHelperProtocolRx.swift
+//  PHPhotoHelperProtocol.swift
 //  SwiftQueueExample
 //
 //  Created by Nischal Hada on 13/8/19.
@@ -8,9 +8,9 @@
 
 import RxSwift
 
-protocol PHPhotoHelperProtocolRx {
+protocol PHPhotoHelperProtocol {
     // MARK: - Check and Respond to Camera Authorization Status
-    var authorizationStatus: Single<PhotoStatus> { get }
+    var authorizationStatus: Single<PHPhotoStatus> { get }
 
     // MARK: - Request Camera Permission
     var requestAccess: Single<Bool> { get }

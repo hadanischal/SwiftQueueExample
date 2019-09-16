@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		041DF5C32302CFFD007392C9 /* PHPhotoHelperProtocolRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041DF5C22302CFFD007392C9 /* PHPhotoHelperProtocolRx.swift */; };
-		041DF5C52302D00D007392C9 /* PHPhotoHelperRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041DF5C42302D00D007392C9 /* PHPhotoHelperRx.swift */; };
-		041DF5C72302D01C007392C9 /* PhotoStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041DF5C62302D01C007392C9 /* PhotoStatus.swift */; };
+		041DF5C32302CFFD007392C9 /* PHPhotoHelperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041DF5C22302CFFD007392C9 /* PHPhotoHelperProtocol.swift */; };
+		041DF5C52302D00D007392C9 /* PHPhotoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041DF5C42302D00D007392C9 /* PHPhotoHelper.swift */; };
+		041DF5C72302D01C007392C9 /* PHPhotoStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041DF5C62302D01C007392C9 /* PHPhotoStatus.swift */; };
 		049C182E2304255200B150E3 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C182D2304255200B150E3 /* UIAlertControllerExtension.swift */; };
 		049C18302304257E00B150E3 /* AlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C182F2304257E00B150E3 /* AlertAction.swift */; };
 		049C18322304279800B150E3 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C18312304279800B150E3 /* BundleExtension.swift */; };
@@ -52,9 +52,6 @@
 		AFE25EE422C70D850064BE6E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE25EE322C70D850064BE6E /* BaseViewController.swift */; };
 		AFE25EE722C70F330064BE6E /* SelectPhotoCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE25EE622C70F330064BE6E /* SelectPhotoCollectionVC.swift */; };
 		AFE25EE922C70F6C0064BE6E /* PhotoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE25EE822C70F6C0064BE6E /* PhotoCollectionCell.swift */; };
-		AFE424F522EF189D00815A39 /* PhotoLibraryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE424F422EF189D00815A39 /* PhotoLibraryHelper.swift */; };
-		AFE424F722EF18B200815A39 /* PhotoLibraryHelperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE424F622EF18B200815A39 /* PhotoLibraryHelperProtocol.swift */; };
-		AFE424F922EF193C00815A39 /* PhotoAuthorizationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE424F822EF193C00815A39 /* PhotoAuthorizationStatus.swift */; };
 		AFF2E84722CA188E00B78383 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF2E84622CA188E00B78383 /* UIViewController.swift */; };
 		F9F252BB4125D58E752719AC /* Pods_SwiftQueueExampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FDC206DBCBD6524E0ADEA7A /* Pods_SwiftQueueExampleUITests.framework */; };
 		FEAB33A6ED69FE6AD1AAE66B /* Pods_SwiftQueueExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62039DD339180FAB779C58B6 /* Pods_SwiftQueueExample.framework */; };
@@ -78,9 +75,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		041DF5C22302CFFD007392C9 /* PHPhotoHelperProtocolRx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHPhotoHelperProtocolRx.swift; sourceTree = "<group>"; };
-		041DF5C42302D00D007392C9 /* PHPhotoHelperRx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHPhotoHelperRx.swift; sourceTree = "<group>"; };
-		041DF5C62302D01C007392C9 /* PhotoStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStatus.swift; sourceTree = "<group>"; };
+		041DF5C22302CFFD007392C9 /* PHPhotoHelperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHPhotoHelperProtocol.swift; sourceTree = "<group>"; };
+		041DF5C42302D00D007392C9 /* PHPhotoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHPhotoHelper.swift; sourceTree = "<group>"; };
+		041DF5C62302D01C007392C9 /* PHPhotoStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHPhotoStatus.swift; sourceTree = "<group>"; };
 		049C182D2304255200B150E3 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
 		049C182F2304257E00B150E3 /* AlertAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertAction.swift; sourceTree = "<group>"; };
 		049C18312304279800B150E3 /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
@@ -137,9 +134,6 @@
 		AFE25EE322C70D850064BE6E /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		AFE25EE622C70F330064BE6E /* SelectPhotoCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoCollectionVC.swift; sourceTree = "<group>"; };
 		AFE25EE822C70F6C0064BE6E /* PhotoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionCell.swift; sourceTree = "<group>"; };
-		AFE424F422EF189D00815A39 /* PhotoLibraryHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryHelper.swift; sourceTree = "<group>"; };
-		AFE424F622EF18B200815A39 /* PhotoLibraryHelperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryHelperProtocol.swift; sourceTree = "<group>"; };
-		AFE424F822EF193C00815A39 /* PhotoAuthorizationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAuthorizationStatus.swift; sourceTree = "<group>"; };
 		AFF2E84622CA188E00B78383 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		D7482F0C9ABEA47075CDF06F /* Pods-SwiftQueueExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftQueueExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftQueueExampleTests/Pods-SwiftQueueExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E6A7D4EEAE172AB7C76DAEF1 /* Pods-SwiftQueueExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftQueueExampleTests.release.xcconfig"; path = "Target Support Files/Pods-SwiftQueueExampleTests/Pods-SwiftQueueExampleTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -177,11 +171,27 @@
 		041DF5C12302CFDE007392C9 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				041DF5C22302CFFD007392C9 /* PHPhotoHelperProtocolRx.swift */,
-				041DF5C42302D00D007392C9 /* PHPhotoHelperRx.swift */,
-				041DF5C62302D01C007392C9 /* PhotoStatus.swift */,
+				044AEC57232FA89E00B9E919 /* PhotoLibraryUtility */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		044AEC56232FA5C500B9E919 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AFE25EB122C6F1230064BE6E /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		044AEC57232FA89E00B9E919 /* PhotoLibraryUtility */ = {
+			isa = PBXGroup;
+			children = (
+				041DF5C22302CFFD007392C9 /* PHPhotoHelperProtocol.swift */,
+				041DF5C42302D00D007392C9 /* PHPhotoHelper.swift */,
+				041DF5C62302D01C007392C9 /* PHPhotoStatus.swift */,
+			);
+			path = PhotoLibraryUtility;
 			sourceTree = "<group>";
 		};
 		1DDF4C9019899E1B4F0913B0 /* Pods */ = {
@@ -230,7 +240,6 @@
 		AF373C0522C71B1D000A5AD7 /* ImageManager */ = {
 			isa = PBXGroup;
 			children = (
-				AFE424F322EF188B00815A39 /* PhotoLibraryHelper */,
 				AF373C0822C71B49000A5AD7 /* ImageManagerProtocol.swift */,
 				AF373C0622C71B2C000A5AD7 /* ImageManager.swift */,
 			);
@@ -365,10 +374,9 @@
 				AF373BFC22C716BA000A5AD7 /* ViewModel */,
 				AFE25EE022C70AE30064BE6E /* ViewController */,
 				AFE25EE522C70EFE0064BE6E /* Cell */,
-				AFE25ED922C6F8720064BE6E /* Resources */,
+				044AEC56232FA5C500B9E919 /* Resources */,
 				AFE25EA722C6F1210064BE6E /* AppDelegate.swift */,
 				AFE25EAB22C6F1210064BE6E /* Main.storyboard */,
-				AFE25EB122C6F1230064BE6E /* Assets.xcassets */,
 				AFE25EB322C6F1230064BE6E /* LaunchScreen.storyboard */,
 				AFE25EB622C6F1230064BE6E /* Info.plist */,
 				AFE25EAE22C6F1210064BE6E /* SwiftQueueExample.xcdatamodeld */,
@@ -401,13 +409,6 @@
 			path = SwiftQueueExampleUITests;
 			sourceTree = "<group>";
 		};
-		AFE25ED922C6F8720064BE6E /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		AFE25EE022C70AE30064BE6E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -423,16 +424,6 @@
 				AFE25EE822C70F6C0064BE6E /* PhotoCollectionCell.swift */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		AFE424F322EF188B00815A39 /* PhotoLibraryHelper */ = {
-			isa = PBXGroup;
-			children = (
-				AFE424F822EF193C00815A39 /* PhotoAuthorizationStatus.swift */,
-				AFE424F622EF18B200815A39 /* PhotoLibraryHelperProtocol.swift */,
-				AFE424F422EF189D00815A39 /* PhotoLibraryHelper.swift */,
-			);
-			path = PhotoLibraryHelper;
 			sourceTree = "<group>";
 		};
 		AFF2E84522CA187A00B78383 /* Extension */ = {
@@ -727,30 +718,27 @@
 				049C18302304257E00B150E3 /* AlertAction.swift in Sources */,
 				AF373C3022C7A005000A5AD7 /* QueueJobCreator.swift in Sources */,
 				AF373C3222C7A005000A5AD7 /* JobModel.swift in Sources */,
-				AFE424F722EF18B200815A39 /* PhotoLibraryHelperProtocol.swift in Sources */,
 				AF373C0722C71B2C000A5AD7 /* ImageManager.swift in Sources */,
 				AF373C1122C77479000A5AD7 /* BaseApiHandler.swift in Sources */,
 				AF373C0D22C71F75000A5AD7 /* SelectPhotoModel.swift in Sources */,
 				AF373C1A22C77DD9000A5AD7 /* WebService.swift in Sources */,
 				049C18322304279800B150E3 /* BundleExtension.swift in Sources */,
-				041DF5C52302D00D007392C9 /* PHPhotoHelperRx.swift in Sources */,
+				041DF5C52302D00D007392C9 /* PHPhotoHelper.swift in Sources */,
 				AF373C1822C77DC4000A5AD7 /* WebServiceProtocol.swift in Sources */,
 				AFE25EE422C70D850064BE6E /* BaseViewController.swift in Sources */,
 				AFE25EE722C70F330064BE6E /* SelectPhotoCollectionVC.swift in Sources */,
 				AF373C0222C71980000A5AD7 /* SelectPhotoViewModel.swift in Sources */,
 				AF373C0422C71998000A5AD7 /* SelectPhotoViewModelProtocol.swift in Sources */,
-				AFE424F522EF189D00815A39 /* PhotoLibraryHelper.swift in Sources */,
 				AFE25EA822C6F1210064BE6E /* AppDelegate.swift in Sources */,
 				AF373C0B22C71BFA000A5AD7 /* ImageModel.swift in Sources */,
 				AF373C1322C774B1000A5AD7 /* BaseApiHandlerProtocol.swift in Sources */,
 				AF373C3422C7A005000A5AD7 /* JobProtocol.swift in Sources */,
 				AF373C3122C7A005000A5AD7 /* JobHandler.swift in Sources */,
 				AF373C0922C71B49000A5AD7 /* ImageManagerProtocol.swift in Sources */,
-				AFE424F922EF193C00815A39 /* PhotoAuthorizationStatus.swift in Sources */,
 				AFE25EB022C6F1210064BE6E /* SwiftQueueExample.xcdatamodeld in Sources */,
-				041DF5C32302CFFD007392C9 /* PHPhotoHelperProtocolRx.swift in Sources */,
+				041DF5C32302CFFD007392C9 /* PHPhotoHelperProtocol.swift in Sources */,
 				AFF2E84722CA188E00B78383 /* UIViewController.swift in Sources */,
-				041DF5C72302D01C007392C9 /* PhotoStatus.swift in Sources */,
+				041DF5C72302D01C007392C9 /* PHPhotoStatus.swift in Sources */,
 				AF373C2E22C7A005000A5AD7 /* QueueManagerBuilder.swift in Sources */,
 				AF373C0022C71963000A5AD7 /* BaseViewModelProtocol.swift in Sources */,
 				049C182E2304255200B150E3 /* UIAlertControllerExtension.swift in Sources */,

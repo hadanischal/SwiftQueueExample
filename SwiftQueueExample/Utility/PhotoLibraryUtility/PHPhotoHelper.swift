@@ -9,12 +9,12 @@
 import RxSwift
 import Photos
 
-class PHPhotoHelperRx: PHPhotoHelperProtocolRx {
+class PHPhotoHelper: PHPhotoHelperProtocol {
 
     // MARK: - Check and Respond to Camera Authorization Status
 
-    var authorizationStatus: Single<PhotoStatus> {
-        return Single<PhotoStatus>.create { single in
+    var authorizationStatus: Single<PHPhotoStatus> {
+        return Single<PHPhotoStatus>.create { single in
             let photoAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
             switch photoAuthorizationStatus {
             case .notDetermined:
@@ -26,6 +26,7 @@ class PHPhotoHelperRx: PHPhotoHelperProtocolRx {
             case .denied:
                 single(.success( .denied))
             @unknown default:
+                single(.error(RxError.unknown))
                 fatalError("PHPhotoLibrary.authorizationStatus() is not available on this version of OS.")
             }
             return Disposables.create()
