@@ -44,14 +44,19 @@ class SelectPhotoCollectionVC: UICollectionViewController {
                 }
             }).disposed(by: disposeBag)
         viewModel.photoCameraStatus
-        .asDriver(onErrorJustReturn: .denied)
-            .drive(onNext: { [weak self] status in
-                print("status:", status)
-                self?.alertPhotoAccessNeeded()
-            }).disposed(by: disposeBag)
+            .observeOn(MainScheduler.instance)
+            .flatMap { [weak self] _ -> Observable<Int> in
+                return self?.alertPhotoAccessNeeded() ?? Observable.empty()
+        }.subscribe(onNext: { index in
+            print ("index: \(index)")
+            if index == 0 {
+                let settingsAppURL = URL(string: UIApplication.openSettingsURLString)!
+                UIApplication.shared.open(settingsAppURL)
+            }
+            self.dismiss(animated: true)
+        }).disposed(by: disposeBag)
 
         viewModel.handelAuthorizationStatus()
-//        viewModel.fetchImage()
     }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -95,23 +100,15 @@ class SelectPhotoCollectionVC: UICollectionViewController {
 
 extension SelectPhotoCollectionVC {
     // MARK: - Alert Photo Access Needed
-    // TODO: Manage Alert properly
-
-    private func alertPhotoAccessNeeded() {
-        let settingsAppURL = URL(string: UIApplication.openSettingsURLString)!
+    private func alertPhotoAccessNeeded() -> Observable<Int> {
         let appName = Bundle.main.displayName ?? "This app"
-        self.alert(title: "This feature requires photo access",
-                   message: "In iPhone settings, tap \(appName) and turn on Photos",
-            actions: [AlertAction(title: "Settings", type: 0, style: .default),
-                      AlertAction(title: "Cancel", type: 1, style: .destructive)],
-            viewController: self).observeOn(MainScheduler.instance)
-            .subscribe(onNext: { index in
-                print ("index: \(index)")
-                if index == 0 {
-                    UIApplication.shared.open(settingsAppURL)
-                }
-                self.dismiss(animated: true)
-            }).disposed(by: disposeBag)
+        let actions = [AlertAction(title: "Settings", type: 0, style: .default),
+                       AlertAction(title: "Cancel", type: 1, style: .destructive)]
+
+        return self.alert(title: "This feature requires photo access",
+                          message: "In iPhone settings, tap \(appName) and turn on Photos",
+                          actions: actions,
+                          viewController: self)
     }
 
 }

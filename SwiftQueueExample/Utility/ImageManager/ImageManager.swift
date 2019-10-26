@@ -11,31 +11,45 @@ import RxSwift
 import RxCocoa
 import Photos
 
-class ImageManager: ImageManagerProtocol {
+final class ImageManager: ImageManagerProtocol {
     private let manager: PHImageManager!
+    private let photoHelper: PHPhotoHelperProtocol
 
-    init(withManager manager: PHImageManager = PHImageManager.default()) {
+    init(withManager manager: PHImageManager = PHImageManager.default(),
+         withPHPhotoHelper photoHelper: PHPhotoHelperProtocol = PHPhotoHelper()
+    ) {
         self.manager = manager
+        self.photoHelper = photoHelper
     }
 
     // access the photos from photo library
     func fetchImage() -> Observable<ImageModel> {
-        return Observable<ImageModel>.create { observer in
-            PHPhotoLibrary.requestAuthorization { status in
-                if status == .authorized {
-                    let assets = PHAsset.fetchAssets(with: PHAssetMediaType.image, options: nil)
-                    assets.enumerateObjects { (object, _, _) in
-                        let model = ImageModel(image: object)
-                        observer.on(.next(model))
-                    }
-                    observer.on(.completed)
-                } else {
-                    observer.on(.error(RxCocoaURLError.unknown))
+        return self.photoHelper
+            .requestAccess
+            .asObservable()
+            .flatMap { [weak self] status -> Observable<ImageModel> in
+                if status {
+                    return self?.fetchAssets() ?? Observable.error(RxError.noElements)
                 }
+                return Observable.error(RxError.unknown)
+        }
+    }
+    // Fetches PHAssetSourceTypeUserLibrary assets by default (use includeAssetSourceTypes option to override)
+    private func fetchAssets() -> Observable<ImageModel> {
+        return Observable<ImageModel>.create { observer in
+            let assets = PHAsset.fetchAssets(with: PHAssetMediaType.image, options: nil)
+            assets.enumerateObjects { (object, _, _) in
+                let model = ImageModel(image: object)
+                observer.on(.next(model))
             }
+            observer.on(.completed)
             return Disposables.create()
         }
     }
+
+    // @abstract Request an image representation for the specified asset.
+    // @param asset The asset whose image data is to be loaded.
+    // @param targetSize The target size of image to be returned.
 
     func getDisplayImage(withModel model: ImageModel) -> Observable<SelectPhotoModel> {
         return Observable<SelectPhotoModel>.create { observer in
@@ -49,6 +63,10 @@ class ImageManager: ImageManagerProtocol {
             return Disposables.create()
         }
     }
+
+    // @abstract Request an image representation for the specified asset.
+    // @param asset The asset whose image data is to be loaded.
+    // @param targetSize The target size of image to be returned.
 
     func getSelectedImage(withModel model: ImageModel) -> Observable<SelectPhotoModel> {
         return Observable<SelectPhotoModel>.create { observer in
