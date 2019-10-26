@@ -30,11 +30,11 @@ class BaseViewController: UIViewController {
 
         self.viewModel.imageAdded
             .observeOn(MainScheduler.instance)
-            .subscribe { [weak self] _ in
-                print("**** added In Queue ****")
+            .subscribe(onNext: { [weak self] _ in
+                 print("**** added In Queue ****")
                 self?.showAlert(title: "Added in queue", message: "added in queue successfully")
-
-            }.disposed(by: disposeBag)
+            })
+            .disposed(by: disposeBag)
 
     }
 

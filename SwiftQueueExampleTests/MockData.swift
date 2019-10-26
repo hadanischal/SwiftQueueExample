@@ -6,11 +6,13 @@
 //  Copyright © 2019 NischalHada. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import Photos
 @testable import SwiftQueueExample
 
 class MockData {
+    static let shared = MockData()
+
     init() {
     }
     let imageModel: ImageModel = ImageModel(image: PHAsset.init())

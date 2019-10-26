@@ -10,6 +10,7 @@
 		041DF5C32302CFFD007392C9 /* PHPhotoHelperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041DF5C22302CFFD007392C9 /* PHPhotoHelperProtocol.swift */; };
 		041DF5C52302D00D007392C9 /* PHPhotoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041DF5C42302D00D007392C9 /* PHPhotoHelper.swift */; };
 		041DF5C72302D01C007392C9 /* PHPhotoStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041DF5C62302D01C007392C9 /* PHPhotoStatus.swift */; };
+		048B4D1E2363E39700A61A61 /* MockPHImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B4D1D2363E39700A61A61 /* MockPHImageManager.swift */; };
 		049C182E2304255200B150E3 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C182D2304255200B150E3 /* UIAlertControllerExtension.swift */; };
 		049C18302304257E00B150E3 /* AlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C182F2304257E00B150E3 /* AlertAction.swift */; };
 		049C18322304279800B150E3 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C18312304279800B150E3 /* BundleExtension.swift */; };
@@ -78,6 +79,7 @@
 		041DF5C22302CFFD007392C9 /* PHPhotoHelperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHPhotoHelperProtocol.swift; sourceTree = "<group>"; };
 		041DF5C42302D00D007392C9 /* PHPhotoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHPhotoHelper.swift; sourceTree = "<group>"; };
 		041DF5C62302D01C007392C9 /* PHPhotoStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHPhotoStatus.swift; sourceTree = "<group>"; };
+		048B4D1D2363E39700A61A61 /* MockPHImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPHImageManager.swift; sourceTree = "<group>"; };
 		049C182D2304255200B150E3 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
 		049C182F2304257E00B150E3 /* AlertAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertAction.swift; sourceTree = "<group>"; };
 		049C18312304279800B150E3 /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
@@ -168,10 +170,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0416103B23531D790094A0F8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AFE25EE522C70EFE0064BE6E /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		041DF5C12302CFDE007392C9 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				AFF2E84522CA187A00B78383 /* Extension */,
 				044AEC57232FA89E00B9E919 /* PhotoLibraryUtility */,
+				AF373C0522C71B1D000A5AD7 /* ImageManager */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -326,6 +338,7 @@
 				AF18C88622C840AC008C8B55 /* GeneratedMocks.swift */,
 				AFB5207F22C877C1004E6509 /* MockData.swift */,
 				AFB5208322C884E3004E6509 /* MockJobResult.swift */,
+				048B4D1D2363E39700A61A61 /* MockPHImageManager.swift */,
 			);
 			name = Mocks;
 			sourceTree = "<group>";
@@ -366,14 +379,12 @@
 			isa = PBXGroup;
 			children = (
 				041DF5C12302CFDE007392C9 /* Utility */,
-				AFF2E84522CA187A00B78383 /* Extension */,
 				AF373C2122C7A005000A5AD7 /* SwiftQueueHandler */,
 				AF373C1622C77DAB000A5AD7 /* Service */,
-				AF373C0522C71B1D000A5AD7 /* ImageManager */,
 				AF373BFB22C716B2000A5AD7 /* Models */,
 				AF373BFC22C716BA000A5AD7 /* ViewModel */,
 				AFE25EE022C70AE30064BE6E /* ViewController */,
-				AFE25EE522C70EFE0064BE6E /* Cell */,
+				0416103B23531D790094A0F8 /* View */,
 				044AEC56232FA5C500B9E919 /* Resources */,
 				AFE25EA722C6F1210064BE6E /* AppDelegate.swift */,
 				AFE25EAB22C6F1210064BE6E /* Main.storyboard */,
@@ -755,6 +766,7 @@
 				AF18C88C22C84BD8008C8B55 /* MaterializedSequenceResult.swift in Sources */,
 				AFB5208022C877C1004E6509 /* MockData.swift in Sources */,
 				AFB5208422C884E3004E6509 /* MockJobResult.swift in Sources */,
+				048B4D1E2363E39700A61A61 /* MockPHImageManager.swift in Sources */,
 				AFB5207922C86063004E6509 /* BaseViewModelTests.swift in Sources */,
 				AFB5207D22C873EB004E6509 /* SelectPhotoViewModelTests.swift in Sources */,
 				AF18C89022C84E26008C8B55 /* GeneratedMocks.swift in Sources */,

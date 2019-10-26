@@ -16,18 +16,12 @@ echo "Mocks Input Directory = $INPUT_DIR"
 ${PODS_ROOT}/Cuckoo/run generate --testable "${PROJECT_NAME}" \
 --output "${OUTPUT_FILE}" \
 "$INPUT_DIR/Service/WebService/WebServiceProtocol.swift" \
-"$INPUT_DIR/Service/WebService/WebService.swift" \
 "$INPUT_DIR/Service/ApiHandler/BaseApiHandlerProtocol.swift" \
-"$INPUT_DIR/Service/ApiHandler/BaseApiHandler.swift" \
 "$INPUT_DIR/ViewModel/BaseViewModelProtocol.swift" \
-"$INPUT_DIR/ViewModel/BaseViewModel.swift" \
-"$INPUT_DIR/ViewModel/SelectPhotoViewModel.swift" \
 "$INPUT_DIR/ViewModel/SelectPhotoViewModelProtocol.swift" \
-"$INPUT_DIR/ImageManager/ImageManagerProtocol.swift" \
-"$INPUT_DIR/ImageManager/ImageManager.swift" \
 "$INPUT_DIR/SwiftQueueHandler/QueueManager/QueueManagerProtocol.swift" \
 "$INPUT_DIR/SwiftQueueHandler/JobScheduler/JobHandler.swift" \
 "$INPUT_DIR/SwiftQueueHandler/JobHelper/JobProtocol.swift" \
 "$INPUT_DIR/Utility/PhotoLibraryUtility/PHPhotoHelperProtocol.swift" \
-"$INPUT_DIR/Utility/PhotoLibraryUtility/PHPhotoHelper.swift" \
+"$INPUT_DIR/Utility/ImageManager/ImageManagerProtocol.swift" \
 # ... and so forth
