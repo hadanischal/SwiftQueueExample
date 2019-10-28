@@ -7,7 +7,14 @@
 //
 
 import UIKit
+import RxSwift
 
 class PhotoCollectionCell: UICollectionViewCell {
+    private(set) var disposeBagCell = DisposeBag()
+
     @IBOutlet weak var photoImageView: UIImageView!
+
+    override func prepareForReuse() {
+        disposeBagCell = DisposeBag()
+    }
 }

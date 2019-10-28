@@ -39,9 +39,7 @@ class SelectPhotoCollectionVC: UICollectionViewController {
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] image in
                 self?.imageList = image
-                DispatchQueue.main.async {
-                    self?.collectionView.reloadData()
-                }
+                self?.collectionView.reloadData()
             }).disposed(by: disposeBag)
         viewModel.photoCameraStatus
             .observeOn(MainScheduler.instance)
@@ -80,20 +78,15 @@ class SelectPhotoCollectionVC: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCollectionCell", for: indexPath) as? PhotoCollectionCell else {
-            fatalError("PhotoCollectionCell is not found")
-        }
+        let cell = collectionView.dequeueReusableCell(for: indexPath) as PhotoCollectionCell
         viewModel.getDisplayImage(withModel: self.imageList[indexPath.row])
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { model in
-                DispatchQueue.main.async {
-                    cell.photoImageView.image = model.image
-                }
+                cell.photoImageView.image = model.image
             }, onError: { error in
                 print("on error ")
                 print(error)
-            }).disposed(by: disposeBag)
+            }).disposed(by: cell.disposeBagCell)
         return cell
     }
 }
