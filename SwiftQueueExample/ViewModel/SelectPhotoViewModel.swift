@@ -12,6 +12,7 @@ import RxCocoa
 import Photos
 
 class SelectPhotoViewModel: SelectPhotoViewModelProtocol {
+
     //input
     private let imageManager: ImageManagerProtocol
     private let phPhotoHelper: PHPhotoHelperProtocol
@@ -29,21 +30,10 @@ class SelectPhotoViewModel: SelectPhotoViewModelProtocol {
         self.phPhotoHelper = phPhotoHelper
         self.imageList = imageListSubject.asObserver()
         self.photoCameraStatus = photoCameraStatusSubject.asObserver()
-
     }
 
-    func fetchImage() {
-        self.imageManager.fetchImage()
-            .toArray()
-            .asObservable()
-            .subscribe(onNext: { [weak self] image in
-//                print(image)
-                self?.imageListSubject.onNext(image)
-                }, onError: { error in
-                    print("on error ")
-                    print(error)
-            })
-            .disposed(by: disposeBag)
+    func viewDidLoad() {
+        handelAuthorizationStatus()
     }
 
     func getDisplayImage(withModel model: ImageModel) -> Observable<SelectPhotoModel> {
@@ -56,34 +46,41 @@ class SelectPhotoViewModel: SelectPhotoViewModelProtocol {
             .asObservable()
     }
 
-    func handelAuthorizationStatus() {
-        phPhotoHelper.authorizationStatus
-            .subscribe(onSuccess: { [weak self] status in
-                switch status {
+    private func handelAuthorizationStatus() {
+        phPhotoHelper.authorizationStatus.asObservable()
+            .flatMap({ photoStatus -> Observable<[ImageModel]> in
+                switch photoStatus {
                 case .notDetermined:
-                    self?.requestAccess()
-
+                    return self.requestAccess()
                 case .authorized:
-                    self?.fetchImage()
-
-                case .restricted, .denied:
-                    self?.photoCameraStatusSubject.on(.next(PhotoCameraStatus.denied))
-
+                    return self.fetchImage()
+                case .denied, .restricted:
+                    return Observable.error(RxError.noElements)
                 }
             })
-            .disposed(by: disposeBag)
+            .subscribe(onNext: {[imageListSubject] imageModel in
+                imageListSubject.onNext(imageModel)
+
+                }, onError: {[photoCameraStatusSubject] (_) in
+                    photoCameraStatusSubject.on(.next(PhotoCameraStatus.denied))
+
+            }).disposed(by: disposeBag)
     }
 
-    private func requestAccess() {
-        self.phPhotoHelper.requestAccess
-            .subscribe(onSuccess: { [weak self] status in
-                if status {
-                    self?.fetchImage()
-                } else {
-                    self?.photoCameraStatusSubject.on(.next(PhotoCameraStatus.denied))
-                }
-            })
-            .disposed(by: self.disposeBag)
+    private func requestAccess() -> Observable<[ImageModel]> {
+        self.phPhotoHelper
+            .requestAccess
+            .asObservable()
+            .flatMap { [weak self] status -> Observable<[ImageModel]> in
+                guard status else { return Observable.error(RxError.noElements)}
+                return self?.fetchImage() ?? Observable.empty()
+        }
+    }
+
+    private func fetchImage() -> Observable<[ImageModel]> {
+        self.imageManager.fetchImage()
+            .toArray()
+            .asObservable()
     }
 
 }
