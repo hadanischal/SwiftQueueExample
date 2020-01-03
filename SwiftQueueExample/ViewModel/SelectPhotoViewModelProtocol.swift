@@ -14,9 +14,8 @@ enum PhotoCameraStatus {
 
 protocol SelectPhotoViewModelProtocol {
     var imageList: Observable<[ImageModel]> { get }
-    func fetchImage()
+    var photoCameraStatus: Observable<PhotoCameraStatus> { get }
     func getDisplayImage(withModel model: ImageModel) -> Observable<SelectPhotoModel>
     func getSelectedImage(withModel model: ImageModel) -> Observable<SelectPhotoModel>
-    func handelAuthorizationStatus()
-    var photoCameraStatus: Observable<PhotoCameraStatus> { get }
+    func viewDidLoad()
 }

@@ -41,6 +41,7 @@ class SelectPhotoCollectionVC: UICollectionViewController {
                 self?.imageList = image
                 self?.collectionView.reloadData()
             }).disposed(by: disposeBag)
+
         viewModel.photoCameraStatus
             .observeOn(MainScheduler.instance)
             .flatMap { [weak self] _ -> Observable<Int> in
@@ -54,7 +55,7 @@ class SelectPhotoCollectionVC: UICollectionViewController {
             self.dismiss(animated: true)
         }).disposed(by: disposeBag)
 
-        viewModel.handelAuthorizationStatus()
+        viewModel.viewDidLoad()
     }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {

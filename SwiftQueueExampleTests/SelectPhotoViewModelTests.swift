@@ -37,7 +37,7 @@ class SelectPhotoViewModelTests: QuickSpec {
                 stub(mockPHPhotoHelper, block: { stub in
                     when(stub.authorizationStatus).get.thenReturn(Single.just(.authorized))
                     when(stub.requestAccess).get.thenReturn(Single.just(true))
-                 })
+                })
                 testViewModel = SelectPhotoViewModel(withImageManager: mockImageManager, phPhotoHelper: mockPHPhotoHelper)
             }
 
@@ -48,20 +48,21 @@ class SelectPhotoViewModelTests: QuickSpec {
                         stub(mockPHPhotoHelper, block: { stub in
                             when(stub.authorizationStatus).get.thenReturn(Single.just(.authorized))
                         })
-                    }
-                    it("emits the image to the UI", closure: {
                         testScheduler.scheduleAt(300, action: {
-                            testViewModel.handelAuthorizationStatus()
+                            testViewModel.viewDidLoad()
                         })
+                    }
+                    it("emits the image to the UI") {
                         let res = testScheduler.start { testViewModel.imageList.asObservable() }
                         expect(res.events.count).to(equal(1))
                         expect(res.events.first?.time).to(equal(300))
                         expect(res.events.last?.time).to(equal(300))
-                    })
-                    it("it invoked PHPhotoHelper for authorizationStatus", closure: {
-                        testViewModel.handelAuthorizationStatus()
-                        verify(mockPHPhotoHelper).authorizationStatus.get()
-                    })
+                    }
+                    it("it invoked PHPhotoHelper for authorizationStatus") {
+                        testScheduler.scheduleAt(300, action: {
+                            verify(mockPHPhotoHelper).authorizationStatus.get()
+                        })
+                    }
                 })
 
                 describe("when authorizationStatus is denied ", {
@@ -70,30 +71,27 @@ class SelectPhotoViewModelTests: QuickSpec {
                         stub(mockPHPhotoHelper, block: { stub in
                             when(stub.authorizationStatus).get.thenReturn(Single.just(.denied))
                         })
-                    }
-                    it("doesnt emits imageList to the UI", closure: {
                         testScheduler.scheduleAt(300, action: {
-                            testViewModel.handelAuthorizationStatus()
+                            testViewModel.viewDidLoad()
                         })
+                    }
+                    it("doesnt emits imageList to the UI") {
                         let res = testScheduler.start { testViewModel.imageList.asObservable() }
                         expect(res.events).to(beEmpty())
-
-                    })
-                    it("emits PhotoCameraStatus denied to the UI", closure: {
-                        testScheduler.scheduleAt(300, action: {
-                            testViewModel.handelAuthorizationStatus()
-                        })
+                    }
+                    it("emits PhotoCameraStatus denied to the UI") {
                         let res = testScheduler.start { testViewModel.photoCameraStatus.asObservable() }
                         expect(res.events.count).to(equal(1))
                         expect(res.events.first?.time).to(equal(300))
                         expect(res.events.last?.time).to(equal(300))
                         let correctResult = [Recorded.next(300, PhotoCameraStatus.denied)]
                         expect(res.events).to(equal(correctResult))
-                    })
-                    it("it invoked PHPhotoHelper for authorizationStatus", closure: {
-                        testViewModel.handelAuthorizationStatus()
-                        verify(mockPHPhotoHelper).authorizationStatus.get()
-                    })
+                    }
+                    it("it invoked PHPhotoHelper for authorizationStatus") {
+                        testScheduler.scheduleAt(300) {
+                            verify(mockPHPhotoHelper).authorizationStatus.get()
+                        }
+                    }
                 })
 
                 describe("when authorizationStatus is restricted ", {
@@ -101,30 +99,28 @@ class SelectPhotoViewModelTests: QuickSpec {
                         stub(mockPHPhotoHelper, block: { stub in
                             when(stub.authorizationStatus).get.thenReturn(Single.just(.restricted))
                         })
-                    }
-                    it("doesnt emits imageList to the UI", closure: {
                         testScheduler.scheduleAt(300, action: {
-                            testViewModel.handelAuthorizationStatus()
+                            testViewModel.viewDidLoad()
                         })
+                    }
+                    it("doesnt emits imageList to the UI") {
                         let res = testScheduler.start { testViewModel.imageList.asObservable() }
                         expect(res.events).to(beEmpty())
 
-                    })
-                    it("emits PhotoCameraStatus denied to the UI", closure: {
-                        testScheduler.scheduleAt(300, action: {
-                            testViewModel.handelAuthorizationStatus()
-                        })
+                    }
+                    it("emits PhotoCameraStatus denied to the UI") {
                         let res = testScheduler.start { testViewModel.photoCameraStatus.asObservable() }
                         expect(res.events.count).to(equal(1))
                         expect(res.events.first?.time).to(equal(300))
                         expect(res.events.last?.time).to(equal(300))
                         let correctResult = [Recorded.next(300, PhotoCameraStatus.denied)]
                         expect(res.events).to(equal(correctResult))
-                    })
-                    it("it invoked PHPhotoHelper for authorizationStatus", closure: {
-                        testViewModel.handelAuthorizationStatus()
-                        verify(mockPHPhotoHelper).authorizationStatus.get()
-                    })
+                    }
+                    it("it invoked PHPhotoHelper for authorizationStatus") {
+                        testScheduler.scheduleAt(300) {
+                            verify(mockPHPhotoHelper).authorizationStatus.get()
+                        }
+                    }
                 })
 
                 describe("when authorizationStatus is notDetermined ", {
@@ -134,24 +130,26 @@ class SelectPhotoViewModelTests: QuickSpec {
                                 when(stub.authorizationStatus).get.thenReturn(Single.just(.notDetermined))
                                 when(stub.requestAccess).get.thenReturn(Single.just(true))
                             })
-                        }
-                        it("emits the image to the UI", closure: {
                             testScheduler.scheduleAt(300, action: {
-                                testViewModel.handelAuthorizationStatus()
+                                testViewModel.viewDidLoad()
                             })
+                        }
+                        it("emits the image to the UI") {
                             let res = testScheduler.start { testViewModel.imageList.asObservable() }
                             expect(res.events.count).to(equal(1))
                             expect(res.events.first?.time).to(equal(300))
                             expect(res.events.last?.time).to(equal(300))
-                        })
-                        it("it invoked PHPhotoHelper for authorizationStatus", closure: {
-                            testViewModel.handelAuthorizationStatus()
-                            verify(mockPHPhotoHelper).authorizationStatus.get()
-                        })
-                        it("it invoked PHPhotoHelper for requestAccess", closure: {
-                            testViewModel.handelAuthorizationStatus()
-                            verify(mockPHPhotoHelper).requestAccess.get()
-                        })
+                        }
+                        it("it invoked PHPhotoHelper for authorizationStatus") {
+                            testScheduler.scheduleAt(300) {
+                                verify(mockPHPhotoHelper).authorizationStatus.get()
+                            }
+                        }
+                        it("it invoked PHPhotoHelper for requestAccess") {
+                            testScheduler.scheduleAt(300) {
+                                verify(mockPHPhotoHelper).requestAccess.get()
+                            }
+                        }
                     })
 
                     context("when requestAccess is denied ", {
@@ -160,34 +158,33 @@ class SelectPhotoViewModelTests: QuickSpec {
                                 when(stub.authorizationStatus).get.thenReturn(Single.just(.notDetermined))
                                 when(stub.requestAccess).get.thenReturn(Single.just(false))
                             })
-                        }
-                        it("doesnt emits imageList to the UI", closure: {
                             testScheduler.scheduleAt(300, action: {
-                                testViewModel.handelAuthorizationStatus()
+                                testViewModel.viewDidLoad()
                             })
+                        }
+                        it("doesnt emits imageList to the UI") {
                             let res = testScheduler.start { testViewModel.imageList.asObservable() }
                             expect(res.events).to(beEmpty())
 
-                        })
-                        it("emits PhotoCameraStatus denied to the UI", closure: {
-                            testScheduler.scheduleAt(300, action: {
-                                testViewModel.handelAuthorizationStatus()
-                            })
+                        }
+                        it("emits PhotoCameraStatus denied to the UI") {
                             let res = testScheduler.start { testViewModel.photoCameraStatus.asObservable() }
                             expect(res.events.count).to(equal(1))
                             expect(res.events.first?.time).to(equal(300))
                             expect(res.events.last?.time).to(equal(300))
                             let correctResult = [Recorded.next(300, PhotoCameraStatus.denied)]
                             expect(res.events).to(equal(correctResult))
-                        })
-                        it("it invoked PHPhotoHelper for authorizationStatus", closure: {
-                            testViewModel.handelAuthorizationStatus()
-                            verify(mockPHPhotoHelper).authorizationStatus.get()
-                        })
-                        it("it invoked PHPhotoHelper for requestAccess", closure: {
-                            testViewModel.handelAuthorizationStatus()
-                            verify(mockPHPhotoHelper).requestAccess.get()
-                        })
+                        }
+                        it("it invoked PHPhotoHelper for authorizationStatus") {
+                            testScheduler.scheduleAt(300) {
+                                verify(mockPHPhotoHelper).authorizationStatus.get()
+                            }
+                        }
+                        it("it invoked PHPhotoHelper for requestAccess") {
+                            testScheduler.scheduleAt(300) {
+                                verify(mockPHPhotoHelper).requestAccess.get()
+                            }
+                        }
                     })
 
                 })
@@ -200,59 +197,53 @@ class SelectPhotoViewModelTests: QuickSpec {
                         stub(mockImageManager, block: { stub in
                             when(stub.fetchImage()).thenReturn(Observable<ImageModel>.just(MockData().imageModel))
                         })
-                        testViewModel.fetchImage()
-                    }
-                    it("it completed successfully", closure: {
-                        verify(mockImageManager).fetchImage()
-                    })
-                })
-                context("When fetch image fails", {
-                    beforeEach {
-                        stub(mockImageManager, block: { stub in
-                            when(stub.fetchImage()).thenReturn(Observable<ImageModel>.error(RxError.noElements))
-                        })
-                        testViewModel.fetchImage()
-                    }
-                    it("it completed successfully", closure: {
-                        verify(mockImageManager).fetchImage()
-                    })
-                })
-
-                it("emits the image to the UI", closure: {
-                    testScheduler.scheduleAt(300, action: {
-                        testViewModel.fetchImage()
-                    })
-                    let res = testScheduler.start { testViewModel.imageList.asObservable() }
-                    expect(res.events.count).to(equal(1))
-                    expect(res.events.first?.time).to(equal(300))
-                    expect(res.events.last?.time).to(equal(300))
-                })
-                context("When fetch image fails", {
-                    beforeEach {
-                        stub(mockImageManager, block: { stub in
-                            when(stub.fetchImage()).thenReturn(Observable<ImageModel>.error(RxError.noElements))
-                        })
-                    }
-                    it("doesnt emits the add in queue to the UI", closure: {
                         testScheduler.scheduleAt(300, action: {
-                            testViewModel.fetchImage()
+                            testViewModel.viewDidLoad()
                         })
-                        let res = testScheduler.start { testViewModel.imageList.asObservable() }
-                        expect(res.events).to(beEmpty())
 
-                    })
+                    }
+                    it("it completed successfully") {
+                        testScheduler.scheduleAt(300) {
+                            verify(mockImageManager).fetchImage()
+                        }
+                    }
+                    it("emits the image to the UI") {
+                        let res = testScheduler.start { testViewModel.imageList.asObservable() }
+                        expect(res.events.count).to(equal(1))
+                        expect(res.events.first?.time).to(equal(300))
+                        expect(res.events.last?.time).to(equal(300))
+                    }
+                })
+                context("When fetch image fails", {
+                    beforeEach {
+                        stub(mockImageManager, block: { stub in
+                            when(stub.fetchImage()).thenReturn(Observable<ImageModel>.error(RxError.noElements))
+                        })
+                        testScheduler.scheduleAt(300, action: {
+                            testViewModel.viewDidLoad()
+                        })
+                    }
+                    it("it completed successfully") {
+                        testScheduler.scheduleAt(300) {
+                            verify(mockImageManager).fetchImage()
+                        }
+                    }
+                    it("doesnt emits the image to the UI") {
+                        let res = testScheduler.start { testViewModel.imageList.asObservable() }
+                        expect(res.events.count).to(equal(0))
+                    }
                 })
             })
 
             describe("getDisplayImage", {
-                it("When get display image succeed", closure: {
+                it("When get display image succeed") {
                     let res = testScheduler.start {
                         testViewModel.getDisplayImage(withModel: MockData().imageModel).asObservable()
                     }
                     expect(res.events.count).to(equal(2))
                     expect(res.events.first?.time).to(equal(200))
                     expect(res.events.last?.time).to(equal(200))
-                })
+                }
 
                 context("When get display image fails", {
                     beforeEach {
@@ -260,26 +251,26 @@ class SelectPhotoViewModelTests: QuickSpec {
                             when(stub.getDisplayImage(withModel: any())).thenReturn(Observable<SelectPhotoModel>.error(RxError.noElements) )
                         })
                     }
-                    it("doesnt emits display image to the UI", closure: {
+                    it("doesnt emits display image to the UI") {
                         let res = testScheduler.start {
                             testViewModel.getDisplayImage(withModel: MockData().imageModel).asObservable()
                         }
                         expect(res.events.count).to(equal(1))
                         expect(res.events.first?.time).to(equal(200))
                         expect(res.events.last?.time).to(equal(200))
-                    })
+                    }
                 })
             })
 
             describe("getSelectedImage", {
-                it("When get selected image succeed", closure: {
+                it("When get selected image succeed") {
                     let res = testScheduler.start {
                         testViewModel.getSelectedImage(withModel: MockData().imageModel).asObservable()
                     }
                     expect(res.events.count).to(equal(2))
                     expect(res.events.first?.time).to(equal(200))
                     expect(res.events.last?.time).to(equal(200))
-                })
+                }
 
                 context("When get selected image fails", {
                     beforeEach {
@@ -287,14 +278,14 @@ class SelectPhotoViewModelTests: QuickSpec {
                             when(stub.getSelectedImage(withModel: any())).thenReturn(Observable<SelectPhotoModel>.error(RxError.noElements) )
                         })
                     }
-                    it("doesnt emits selected image to the UI", closure: {
+                    it("doesnt emits selected image to the UI") {
                         let res = testScheduler.start {
                             testViewModel.getSelectedImage(withModel: MockData().imageModel).asObservable()
                         }
                         expect(res.events.count).to(equal(1))
                         expect(res.events.first?.time).to(equal(200))
                         expect(res.events.last?.time).to(equal(200))
-                    })
+                    }
                 })
             })
 
