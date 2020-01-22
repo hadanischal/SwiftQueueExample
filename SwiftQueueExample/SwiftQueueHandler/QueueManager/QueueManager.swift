@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 import SwiftQueue
 
-class QueueManager: QueueManagerProtocol {
+final class QueueManager: QueueManagerProtocol {
     private let manager: SwiftQueueManager
 
     init(withQueueManager manager: SwiftQueueManager = QueueManagerBuilder.shared) {

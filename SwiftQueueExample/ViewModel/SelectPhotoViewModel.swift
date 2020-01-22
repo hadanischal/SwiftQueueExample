@@ -8,10 +8,9 @@
 
 import Foundation
 import RxSwift
-import RxCocoa
 import Photos
 
-class SelectPhotoViewModel: SelectPhotoViewModelProtocol {
+final class SelectPhotoViewModel: SelectPhotoViewModelProtocol {
 
     //input
     private let imageManager: ImageManagerProtocol

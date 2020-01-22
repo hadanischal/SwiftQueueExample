@@ -8,9 +8,8 @@
 
 import Foundation
 import RxSwift
-import RxCocoa
 
-class BaseViewModel: BaseViewModelProtocol {
+final class BaseViewModel: BaseViewModelProtocol {
     var imageAdded: Observable<()>
     private let imageAddedSubject = PublishSubject<()>()
 
@@ -25,10 +24,14 @@ class BaseViewModel: BaseViewModelProtocol {
     func addInQueue(withModel model: SelectPhotoModel?) {
         //model.image
         //use image in param for real time data
-        guard let image = model?.image else {
-            return
-        }
-        let model = JobModel(id: Int.random(in: 1..<5), title: image.accessibilityIdentifier ?? "foo", body: "bar", userId: Int.random(in: 1..<5), image: image)
+        guard let image = model?.image else { return }
+        
+        let model = JobModel(id: Int.random(in: 1..<5),
+                             title: image.accessibilityIdentifier ?? "foo",
+                             body: "bar",
+                             userId: Int.random(in: 1..<5),
+                             image: image)
+        
         self.queueManager.add(job: model)
             .subscribe(onCompleted: {
                 self.imageAddedSubject.on(.next(()))

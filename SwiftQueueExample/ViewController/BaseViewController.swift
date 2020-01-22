@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class BaseViewController: UIViewController {
+final class BaseViewController: UIViewController {
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var uploadButton: UIButton!
     let disposeBag = DisposeBag()

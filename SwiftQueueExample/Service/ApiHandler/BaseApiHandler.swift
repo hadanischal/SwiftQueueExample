@@ -11,7 +11,7 @@ import RxSwift
 //Mocking the API CALL
 //This class is  making POST request
 
-class BaseApiHandler: BaseApiHandlerProtocol {
+final class BaseApiHandler: BaseApiHandlerProtocol {
     private let webService: WebServiceProtocol
 
     init(withWebService webService: WebServiceProtocol = WebService()) {

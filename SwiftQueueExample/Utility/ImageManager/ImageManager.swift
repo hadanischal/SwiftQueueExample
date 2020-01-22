@@ -16,8 +16,7 @@ final class ImageManager: ImageManagerProtocol {
     private let photoHelper: PHPhotoHelperProtocol
 
     init(withManager manager: PHImageManager = PHImageManager.default(),
-         withPHPhotoHelper photoHelper: PHPhotoHelperProtocol = PHPhotoHelper()
-    ) {
+         withPHPhotoHelper photoHelper: PHPhotoHelperProtocol = PHPhotoHelper()) {
         self.manager = manager
         self.photoHelper = photoHelper
     }

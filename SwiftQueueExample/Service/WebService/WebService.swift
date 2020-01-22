@@ -10,9 +10,8 @@ import Foundation
 import RxSwift
 import Alamofire
 
-class WebService: WebServiceProtocol {
-    init() {
-    }
+final class WebService: WebServiceProtocol {
+
     func request(url: URL, parameters: [String: Any]?) -> Completable {
         print(url)
         print(parameters ?? "nil")

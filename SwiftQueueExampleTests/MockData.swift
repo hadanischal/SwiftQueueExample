@@ -13,8 +13,6 @@ import Photos
 class MockData {
     static let shared = MockData()
 
-    init() {
-    }
     let imageModel: ImageModel = ImageModel(image: PHAsset.init())
     let selectPhotoModel: SelectPhotoModel = SelectPhotoModel(image: UIImage())
     let testError = NSError(domain: "dummyError", code: -232, userInfo: nil)
