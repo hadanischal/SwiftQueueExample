@@ -10,7 +10,7 @@ import UIKit
 import SwiftQueue
 import RxSwift
 
-class JobHandler: Job {
+final class JobHandler: Job {
     private var params: [String: Any]
     private let apiHandler: BaseApiHandlerProtocol
     let disposeBag = DisposeBag()

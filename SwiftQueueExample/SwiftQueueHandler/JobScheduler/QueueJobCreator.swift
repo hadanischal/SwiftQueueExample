@@ -9,7 +9,7 @@
 import Foundation
 import SwiftQueue
 
-class QueueJobCreator: JobCreator {
+final class QueueJobCreator: JobCreator {
     func create(type: String, params: [String: Any]?) -> Job {
         if
             let params = params,

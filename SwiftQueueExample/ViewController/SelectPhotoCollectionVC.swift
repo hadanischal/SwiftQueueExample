@@ -11,7 +11,7 @@ import Photos
 import RxSwift
 import RxCocoa
 
-class SelectPhotoCollectionVC: UICollectionViewController {
+final class SelectPhotoCollectionVC: UICollectionViewController {
 
     @IBOutlet weak var cancelButton: UIBarButtonItem!
 

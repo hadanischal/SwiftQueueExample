@@ -9,7 +9,7 @@
 import RxSwift
 import Photos
 
-class PHPhotoHelper: PHPhotoHelperProtocol {
+final class PHPhotoHelper: PHPhotoHelperProtocol {
 
     // MARK: - Check and Respond to Camera Authorization Status
 

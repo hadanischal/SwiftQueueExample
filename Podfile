@@ -17,8 +17,8 @@ target 'SwiftQueueExample' do
     # Pods for testing
     pod 'RxBlocking', '~> 5.0.0'
     pod 'RxTest',     '~> 5.0.0'
-    pod 'Cuckoo', '~> 1.0.6'
-    pod 'Quick', '~> 2.1.0'
+    pod 'Cuckoo', '~> 1.3.0'
+    pod 'Quick', '~> 2.2.0'
     pod 'Nimble', '~> 8'
   end
   
