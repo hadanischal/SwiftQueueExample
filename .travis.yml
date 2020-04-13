@@ -1,0 +1,31 @@
+language: swift # or objective-c
+osx_image: xcode11.3
+
+env:
+ global:
+    - xcode_project="SwiftQueueExample.xcodeproj"
+    - xcode_workspace="SwiftQueueExample.xcworkspace"
+    - xcode_scheme="SwiftQueueExample"
+    - xcode_scheme_tests="SwiftQueueExampleTests"
+    - xcode_destination="platform=iOS Simulator,name=iPhone X,OS=12.0"
+
+before_install:
+ - pod install
+ - ./Cuckoo-GeneratedMocks.sh
+
+script:
+    - xcodebuild test -workspace "$xcode_workspace" -scheme "$xcode_scheme" -destination "$xcode_destination" -configuration Debug ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test -enableCodeCoverage YES | xcpretty;
+
+#    - if [ $TYPE == "XCODE" ]; then
+#        xcodebuild -scheme "$xcode_scheme" -workspace "$xcode_workspace" -sdk iphonesimulator -destination "$xcode_destination" build test;
+#      fi
+#
+#    - if [ $TYPE == "POD" ]; then
+#        pod lib lint;
+#      fi
+
+#  - xcodebuild test -enableCodeCoverage YES -workspace "$xcode_workspace" -scheme "$xcode_scheme" -sdk iphonesimulator -destination "$xcode_destination"
+#  xcodebuild test -workspace "$xcode_workspace" -scheme "$xcode_scheme" -destination "$xcode_destination" -configuration Debug ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test -enableCodeCoverage YES | xcpretty;
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash) -t adf362a9-6b9d-4413-9e9f-a69782d1ee1d

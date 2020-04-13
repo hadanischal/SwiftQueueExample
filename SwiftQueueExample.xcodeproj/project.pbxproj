@@ -42,6 +42,8 @@
 		AF373C3222C7A005000A5AD7 /* JobModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF373C2A22C7A005000A5AD7 /* JobModel.swift */; };
 		AF373C3322C7A005000A5AD7 /* JobType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF373C2B22C7A005000A5AD7 /* JobType.swift */; };
 		AF373C3422C7A005000A5AD7 /* JobProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF373C2C22C7A005000A5AD7 /* JobProtocol.swift */; };
+		AF41627A2441AABA0025FD70 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = AF4162792441AABA0025FD70 /* .travis.yml */; };
+		AF41627C2441B23E0025FD70 /* codecov.yml in Resources */ = {isa = PBXBuildFile; fileRef = AF41627B2441B23E0025FD70 /* codecov.yml */; };
 		AFB5207922C86063004E6509 /* BaseViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB5207822C86063004E6509 /* BaseViewModelTests.swift */; };
 		AFB5207D22C873EB004E6509 /* SelectPhotoViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB5207C22C873EB004E6509 /* SelectPhotoViewModelTests.swift */; };
 		AFB5208022C877C1004E6509 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB5207F22C877C1004E6509 /* MockData.swift */; };
@@ -119,6 +121,8 @@
 		AF373C2A22C7A005000A5AD7 /* JobModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobModel.swift; sourceTree = "<group>"; };
 		AF373C2B22C7A005000A5AD7 /* JobType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobType.swift; sourceTree = "<group>"; };
 		AF373C2C22C7A005000A5AD7 /* JobProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobProtocol.swift; sourceTree = "<group>"; };
+		AF4162792441AABA0025FD70 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .travis.yml; sourceTree = "<group>"; };
+		AF41627B2441B23E0025FD70 /* codecov.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = codecov.yml; sourceTree = "<group>"; };
 		AFB5207822C86063004E6509 /* BaseViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModelTests.swift; sourceTree = "<group>"; };
 		AFB5207C22C873EB004E6509 /* SelectPhotoViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoViewModelTests.swift; sourceTree = "<group>"; };
 		AFB5207F22C877C1004E6509 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
@@ -378,7 +382,10 @@
 		AFC165DA22C837A000FE462F /* BuildScripts */ = {
 			isa = PBXGroup;
 			children = (
+				AF373BF822C715BF000A5AD7 /* .swiftlint.yml */,
 				AFC165DB22C837C200FE462F /* Cuckoo-GeneratedMocks.sh */,
+				AF4162792441AABA0025FD70 /* .travis.yml */,
+				AF41627B2441B23E0025FD70 /* codecov.yml */,
 			);
 			name = BuildScripts;
 			sourceTree = "<group>";
@@ -387,7 +394,6 @@
 			isa = PBXGroup;
 			children = (
 				AFC165DA22C837A000FE462F /* BuildScripts */,
-				AF373BF822C715BF000A5AD7 /* .swiftlint.yml */,
 				AFE25EA622C6F1210064BE6E /* SwiftQueueExample */,
 				AFE25EBE22C6F1240064BE6E /* SwiftQueueExampleTests */,
 				AFE25EC922C6F1240064BE6E /* SwiftQueueExampleUITests */,
@@ -594,6 +600,8 @@
 			files = (
 				AFE25EB522C6F1230064BE6E /* LaunchScreen.storyboard in Resources */,
 				AFE25EB222C6F1230064BE6E /* Assets.xcassets in Resources */,
+				AF41627C2441B23E0025FD70 /* codecov.yml in Resources */,
+				AF41627A2441AABA0025FD70 /* .travis.yml in Resources */,
 				AFE25EAD22C6F1210064BE6E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
