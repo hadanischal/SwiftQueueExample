@@ -15,8 +15,8 @@ target 'SwiftQueueExample' do
   target 'SwiftQueueExampleTests' do
     inherit! :search_paths
     # Pods for testing
-    pod 'RxBlocking', '~> 5.0.0'
-    pod 'RxTest',     '~> 5.0.0'
+    pod 'RxBlocking', '~> 5.1.0'
+    pod 'RxTest',     '~> 5.1.0'
     pod 'Cuckoo', '~> 1.3.0'
     pod 'Quick', '~> 2.2.0'
     pod 'Nimble', '~> 8'

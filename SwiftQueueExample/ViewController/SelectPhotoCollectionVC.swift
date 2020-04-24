@@ -47,7 +47,7 @@ final class SelectPhotoCollectionVC: UICollectionViewController {
             .flatMap { [weak self] _ -> Observable<Int> in
                 return self?.alertPhotoAccessNeeded() ?? Observable.empty()
         }.subscribe(onNext: { index in
-            print ("index: \(index)")
+            print("index: \(index)")
             if index == 0 {
                 let settingsAppURL = URL(string: UIApplication.openSettingsURLString)!
                 UIApplication.shared.open(settingsAppURL)

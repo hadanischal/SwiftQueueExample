@@ -28,7 +28,7 @@ final class WebService: WebServiceProtocol {
                         completable(.error(error))
                     }
             }
-            return Disposables.create ()
+            return Disposables.create()
         }
     }
 }

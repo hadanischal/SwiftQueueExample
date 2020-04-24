@@ -23,11 +23,6 @@ final class BaseViewController: UIViewController {
         uploadButton.isEnabled = false
         uploadButton.alpha = 0.4
 
-        uploadButton.rx.tap
-            .bind { [weak self] _ in
-                self?.viewModel.addInQueue(withModel: self?.imageSelected)
-            }.disposed(by: disposeBag)
-
         self.viewModel.imageAdded
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] _ in
@@ -43,13 +38,13 @@ final class BaseViewController: UIViewController {
             let photosCVC = navC.viewControllers.first as? SelectPhotoCollectionVC else {
                 fatalError("Segue destination is not found")
         }
-        photosCVC.selectedPhoto.subscribe(onNext: { [weak self] photo in
-            DispatchQueue.main.async {
+        photosCVC.selectedPhoto
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] photo in
                 self?.imageSelected = photo
                 self?.updateUI(with: photo.image)
-            }
-
-        }).disposed(by: disposeBag)
+            })
+            .disposed(by: disposeBag)
 
     }
 
@@ -58,4 +53,9 @@ final class BaseViewController: UIViewController {
         self.uploadButton.isEnabled = true
         uploadButton.alpha = 1
     }
+
+    @IBAction func uploadImage(_ sender: Any) {
+        viewModel.addInQueue(withModel: imageSelected)
+    }
+
 }
